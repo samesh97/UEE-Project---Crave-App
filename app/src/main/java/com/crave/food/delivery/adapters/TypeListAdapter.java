@@ -5,21 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
 
 public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyViewHolder>
 {
     private Context context;
-    private ArrayList<String> list;
+    private ArrayList<Type> list;
     private int currentSelectedItem  = 0;
 
-    public TypeListAdapter(Context context, ArrayList<String> list)
+    public TypeListAdapter(Context context, ArrayList<Type> list)
     {
         this.context = context;
         this.list = list;
@@ -38,6 +40,8 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
     {
         if(list != null && list.size() > position)
         {
+            Type type = list.get(position);
+            holder.title.setText(type.getName());
             if(currentSelectedItem == position)
             {
                 if(position % 2== 0)
@@ -48,6 +52,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                 {
                     holder.image_background.setImageResource(R.drawable.tomato_background_right_oriented);
                 }
+                holder.title.setTextColor(context.getResources().getColor(R.color.white));
 
             }
             else
@@ -60,6 +65,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                 {
                     holder.image_background.setImageResource(R.drawable.white_background_right_oriented);
                 }
+                holder.title.setTextColor(context.getResources().getColor(R.color.orange));
             }
 
 
@@ -85,10 +91,12 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
         ImageView image_background;
+        TextView title;
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
             image_background = itemView.findViewById(R.id.image_background);
+            title = itemView.findViewById(R.id.title);
         }
     }
 }
