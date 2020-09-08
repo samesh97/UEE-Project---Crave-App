@@ -79,6 +79,8 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                 }
             });
 
+            holder.icon.setImageDrawable(type.getImageId());
+
         }
     }
 
@@ -92,11 +94,13 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
     {
         ImageView image_background;
         TextView title;
+        ImageView icon;
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
             image_background = itemView.findViewById(R.id.image_background);
             title = itemView.findViewById(R.id.title);
+            icon = itemView.findViewById(R.id.icon);
         }
     }
 }

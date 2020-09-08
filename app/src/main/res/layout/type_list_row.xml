@@ -9,29 +9,47 @@
     <ImageView
         android:id="@+id/image_background"
         android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/tomato_background_left_oriented"
+        android:src="@drawable/white_background_right_oriented"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/burger"
+        app:layout_constraintBottom_toBottomOf="@+id/image_background"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
+        app:layout_constraintTop_toTopOf="@+id/image_background" />
+
     <TextView
         android:id="@+id/title"
-        android:layout_width="110dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:maxLines="1"
         android:minLines="1"
-        android:gravity="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/image_background"
         app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintStart_toStartOf="@+id/image_background"
+        app:layout_constraintStart_toEndOf="@+id/icon"
         app:layout_constraintTop_toTopOf="@+id/image_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private void setData()
     {
         ArrayList<Type> arrayList = new ArrayList<>();
-        arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.ic_launcher_background)));
-        arrayList.add(getTypeObject("Bakery",getResources().getDrawable(R.drawable.ic_launcher_background)));
+        arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.burger)));
+        arrayList.add(getTypeObject("Bakery",getResources().getDrawable(R.drawable.strawberry)));
         arrayList.add(getTypeObject("Fruit Items",getResources().getDrawable(R.drawable.ic_launcher_background)));
         arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.ic_launcher_background)));
         arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.ic_launcher_background)));
