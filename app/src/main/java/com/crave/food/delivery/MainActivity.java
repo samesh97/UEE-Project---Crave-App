@@ -39,18 +39,18 @@ public class MainActivity extends AppCompatActivity {
     private void setData()
     {
 
-        Glide.with(getApplicationContext()).load(R.drawable.burger).into(recommended_food_icon);
+        Glide.with(getApplicationContext()).load(R.drawable.sri_lankan).into(recommended_food_icon);
 
 
 
 
         ArrayList<Type> arrayList = new ArrayList<>();
-        arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.burger)));
-        arrayList.add(getTypeObject("Local",getResources().getDrawable(R.drawable.strawberry)));
-        arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.strawberry)));
-        arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.burger)));
-        arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.strawberry)));
-        arrayList.add(getTypeObject("Deserts",getResources().getDrawable(R.drawable.burger)));
+        arrayList.add(getTypeObject("Sri Lankan",getResources().getDrawable(R.drawable.sri_lankan)));
+        arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese)));
+        arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.indian)));
+        arrayList.add(getTypeObject("Bakery",getResources().getDrawable(R.drawable.bakery)));
+        arrayList.add(getTypeObject("Desserts",getResources().getDrawable(R.drawable.desserts)));
+        arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.juice_bars)));
 
         TypeListAdapter adapter = new TypeListAdapter(getApplicationContext(),arrayList);
 

@@ -31,11 +31,22 @@
             android:background="@null"
             android:fontFamily="@font/gilroy"
             android:hint="Type keyword"
-            android:paddingLeft="5dp"
+            android:paddingLeft="55dp"
             android:paddingRight="20dp"
             android:textSize="15sp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/search_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/navigation_drawer_icon"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:src="@drawable/navigation_drawer_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -159,6 +170,8 @@
         android:id="@+id/recommended_food_icon"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/recommended_container"
