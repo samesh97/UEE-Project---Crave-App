@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.models.Type;
 
@@ -42,7 +43,7 @@ public class PopularListAdapter extends RecyclerView.Adapter<PopularListAdapter.
             Type type = list.get(position);
             holder.title.setText(type.getName());
 
-            holder.icon.setImageDrawable(type.getImageId());
+            Glide.with(context).load(type.getImageId()).into(holder.icon);
 
         }
     }

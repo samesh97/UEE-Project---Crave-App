@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
 import com.crave.food.delivery.models.Type;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView foodList;
     private RecyclerView popularList;
+    private ImageView recommended_food_icon;
 
 
     @Override
@@ -35,13 +38,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void setData()
     {
+
+        Glide.with(getApplicationContext()).load(R.drawable.burger).into(recommended_food_icon);
+
+
+
+
         ArrayList<Type> arrayList = new ArrayList<>();
         arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.burger)));
-        arrayList.add(getTypeObject("Fruits",getResources().getDrawable(R.drawable.strawberry)));
-        arrayList.add(getTypeObject("Fast Food",getResources().getDrawable(R.drawable.burger)));
-        arrayList.add(getTypeObject("Fruits",getResources().getDrawable(R.drawable.strawberry)));
-        arrayList.add(getTypeObject("Fast food",getResources().getDrawable(R.drawable.burger)));
-        arrayList.add(getTypeObject("Fruits",getResources().getDrawable(R.drawable.strawberry)));
+        arrayList.add(getTypeObject("Local",getResources().getDrawable(R.drawable.strawberry)));
+        arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.strawberry)));
+        arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.burger)));
+        arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.strawberry)));
+        arrayList.add(getTypeObject("Deserts",getResources().getDrawable(R.drawable.burger)));
+
         TypeListAdapter adapter = new TypeListAdapter(getApplicationContext(),arrayList);
 
         LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -52,7 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        PopularListAdapter adapter1 = new PopularListAdapter(getApplicationContext(),arrayList);
+
+        ArrayList<Type> arrayList1 = new ArrayList<>();
+        arrayList1.add(getTypeObject("McDonalds",getResources().getDrawable(R.drawable.mc_donald)));
+        arrayList1.add(getTypeObject("Pizza Hut",getResources().getDrawable(R.drawable.pizza_hut)));
+        arrayList1.add(getTypeObject("Biriyani Bowl",getResources().getDrawable(R.drawable.biriyani_bowl)));
+        arrayList1.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese)));
+        arrayList1.add(getTypeObject("KFC",getResources().getDrawable(R.drawable.kfc)));
+        arrayList1.add(getTypeObject("Indian Spices",getResources().getDrawable(R.drawable.indian_spices)));
+        arrayList1.add(getTypeObject("Burger King",getResources().getDrawable(R.drawable.burger_king)));
+
+
+        PopularListAdapter adapter1 = new PopularListAdapter(getApplicationContext(),arrayList1);
         LinearLayoutManager manager1 = new LinearLayoutManager(getApplicationContext());
         manager1.setOrientation(RecyclerView.HORIZONTAL);
         popularList.setLayoutManager(manager1);
@@ -63,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     {
         foodList = findViewById(R.id.foodList);
         popularList = findViewById(R.id.popularList);
+        recommended_food_icon = findViewById(R.id.recommended_food_icon);
     }
     public Type getTypeObject(String name, Drawable drawable)
     {

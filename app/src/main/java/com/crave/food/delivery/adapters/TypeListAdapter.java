@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.models.Type;
 
@@ -46,11 +47,11 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
             {
                 if(position % 2== 0)
                 {
-                    holder.image_background.setImageResource(R.drawable.tomato_background_left_oriented);
+                    Glide.with(context).load(R.drawable.tomato_background_left_oriented).into(holder.image_background);
                 }
                 else
                 {
-                    holder.image_background.setImageResource(R.drawable.tomato_background_right_oriented);
+                    Glide.with(context).load(R.drawable.tomato_background_right_oriented).into(holder.image_background);
                 }
                 holder.title.setTextColor(context.getResources().getColor(R.color.white));
 
@@ -59,11 +60,11 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
             {
                 if(position % 2== 0)
                 {
-                    holder.image_background.setImageResource(R.drawable.white_background_left_oriented);
+                    Glide.with(context).load(R.drawable.white_background_left_oriented).into(holder.image_background);
                 }
                 else
                 {
-                    holder.image_background.setImageResource(R.drawable.white_background_right_oriented);
+                    Glide.with(context).load(R.drawable.white_background_right_oriented).into(holder.image_background);
                 }
                 holder.title.setTextColor(context.getResources().getColor(R.color.orange));
             }
@@ -79,7 +80,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                 }
             });
 
-            holder.icon.setImageDrawable(type.getImageId());
+            Glide.with(context).load(type.getImageId()).into(holder.icon);
 
         }
     }
