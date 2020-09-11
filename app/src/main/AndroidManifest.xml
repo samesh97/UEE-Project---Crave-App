@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
         <activity android:name=".LoginScreen">
+
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
