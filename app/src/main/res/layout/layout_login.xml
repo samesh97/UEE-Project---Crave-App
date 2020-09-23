@@ -111,6 +111,7 @@
         android:alpha="0.6"
         android:fontFamily="@font/gilroy"
         android:text="Register?"
+        android:onClick="onRegisterClicked"
         app:layout_constraintEnd_toStartOf="@+id/forgot_password"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/login_btn"

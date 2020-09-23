@@ -27,6 +27,7 @@ import com.crave.food.delivery.adapters.TypeListAdapter;
 import com.crave.food.delivery.config.Methods;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
+import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
 
@@ -85,12 +86,29 @@ public class MainActivity extends AppCompatActivity {
     public void Login(View view)
     {
         setFragment(new LoginFragment(MainActivity.this,getSupportFragmentManager()));
-        showNavigationDialog();
+        if(isNavigationOpened())
+            showNavigationDialog();
     }
 
     public void onHomeClicked(View view)
     {
         setFragment(new HomeFragment(MainActivity.this,getSupportFragmentManager()));
-        showNavigationDialog();
+        if(isNavigationOpened())
+            showNavigationDialog();
     }
+    public void onRegisterClicked(View view)
+    {
+        setFragment(new RegisterFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public boolean isNavigationOpened()
+    {
+        if(navigation_drawer.isDrawerOpen(navigationView))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
