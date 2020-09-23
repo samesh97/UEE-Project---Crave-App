@@ -1,47 +1,23 @@
-package com.crave.food.delivery;
+package com.crave.food.delivery.activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Dialog;
-import android.app.FragmentTransaction;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.crave.food.delivery.adapters.PopularListAdapter;
-import com.crave.food.delivery.adapters.TypeListAdapter;
-import com.crave.food.delivery.config.Methods;
+import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
-import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private NavigationView navigationView;
     private DrawerLayout navigation_drawer;
-
-
-
-
 
 
     @Override

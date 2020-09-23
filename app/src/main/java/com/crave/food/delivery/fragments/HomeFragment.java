@@ -11,19 +11,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.crave.food.delivery.MainActivity;
+import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
 import com.crave.food.delivery.models.Type;
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 

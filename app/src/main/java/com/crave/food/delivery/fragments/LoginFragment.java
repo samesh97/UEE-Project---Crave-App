@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.RenderMode;
-import com.crave.food.delivery.MainActivity;
+import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.R;
 
 public class LoginFragment extends Fragment implements View.OnClickListener
