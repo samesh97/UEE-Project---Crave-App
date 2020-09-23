@@ -8,10 +8,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    <include-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_width="match_parent"-->
-<!--        layout="@layout/layout_home"/>-->
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -35,7 +31,8 @@
                 android:id="@+id/include"
                 layout="@layout/nav_header_main"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +40,7 @@
             <TextView
                 android:id="@+id/home"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
@@ -52,9 +49,10 @@
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
-                android:text="Home"
-                android:onClick="onHomeClicked"
                 android:letterSpacing="0.05"
+                android:onClick="onHomeClicked"
+                android:text="Home"
+                app:layout_constraintBottom_toTopOf="@+id/cart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/include" />
@@ -63,7 +61,7 @@
             <TextView
                 android:id="@+id/cart"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
@@ -74,6 +72,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.05"
                 android:text="Cart"
+                app:layout_constraintBottom_toTopOf="@+id/orders"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,13 +81,14 @@
             <TextView
                 android:id="@+id/orders"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
-                android:text="Orders"
                 android:letterSpacing="0.05"
+                android:text="Orders"
+                app:layout_constraintBottom_toTopOf="@+id/favourites"
                 app:layout_constraintEnd_toEndOf="@+id/cart"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/cart"
@@ -98,13 +98,14 @@
             <TextView
                 android:id="@+id/favourites"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
-                android:text="Favourites"
                 android:letterSpacing="0.05"
+                android:text="Favourites"
+                app:layout_constraintBottom_toTopOf="@+id/offers"
                 app:layout_constraintEnd_toEndOf="@+id/orders"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/orders"
@@ -113,17 +114,20 @@
             <TextView
                 android:id="@+id/offers"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
-                android:text="Offers"
                 android:letterSpacing="0.05"
+                android:text="Offers"
+                app:layout_constraintBottom_toTopOf="@+id/logout"
                 app:layout_constraintEnd_toEndOf="@+id/favourites"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/favourites"
-                app:layout_constraintTop_toBottomOf="@+id/favourites" />
+                app:layout_constraintTop_toBottomOf="@+id/favourites"
+                app:layout_constraintVertical_chainStyle="packed" />
 
 
             <Button
@@ -132,18 +136,31 @@
                 android:layout_height="42dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:background="@drawable/button_primary_color_background"
                 android:fontFamily="@font/gilroy"
-                android:text="Login"
                 android:letterSpacing="0.1"
                 android:onClick="Login"
+                android:text="Login"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/offers" />
+                app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.89" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
