@@ -5,7 +5,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.Toast;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.HomeFragment;
@@ -19,6 +21,31 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout navigation_drawer;
 
+    private boolean isWantToLeave = false;
+
+
+    @Override
+    public void onBackPressed()
+    {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run()
+            {
+                isWantToLeave = false;
+            }
+        },500);
+
+        if(isWantToLeave)
+        {
+            super.onBackPressed();
+        }
+        else
+        {
+            Toast.makeText(this, "Press again to leave", Toast.LENGTH_SHORT).show();
+        }
+        isWantToLeave = true;
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
