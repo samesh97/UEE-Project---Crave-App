@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.crave.food.delivery.R;
 
-public class RestuarantFragment extends AppCompatActivity {
+public class TableFragment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_restuarant);
+        setContentView(R.layout.layout_table);
     }
 }
