@@ -13,6 +13,9 @@ import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
+import com.crave.food.delivery.fragments.RestuarantFragment;
+import com.crave.food.delivery.fragments.RestuarantViewFragment;
+import com.crave.food.delivery.fragments.TableFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {

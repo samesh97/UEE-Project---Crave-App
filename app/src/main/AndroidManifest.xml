@@ -17,7 +17,11 @@
 
 
             </activity>
-        <activity android:name=".fragments.RestuarantFragment" />
+        <activity android:name=".fragments.RestuarantFragment" >
+
+
+
+        </activity>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

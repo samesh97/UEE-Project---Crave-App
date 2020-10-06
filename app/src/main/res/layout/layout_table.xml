@@ -2,44 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/table"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.TableFragment">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Book a Table"
+    <Button
+        android:id="@+id/btn_book"
+        android:layout_width="220dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="20dp"
+
+
+        android:background="@drawable/tomato_background_right_oriented"
         android:fontFamily="@font/gilroy"
         android:gravity="center"
-      android:textSize="19sp"
+        android:text="BOOK"
+        android:textColor="@color/white"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/ash_color_background"
-        android:ellipsize="end"
-        android:ems="10"
-        android:fontFamily="@font/gilroy"
-        android:hint="date"
-        android:inputType="date"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
     <EditText
         android:id="@+id/editTextTime"
@@ -105,22 +89,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
-    <Button
-        android:id="@+id/btn_book"
+    <EditText
+        android:id="@+id/editTextDate"
         android:layout_width="220dp"
-        android:layout_height="122dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/ash_color_background"
+        android:ellipsize="end"
+        android:ems="10"
+        android:fontFamily="@font/gilroy"
+        android:hint="date"
+        android:inputType="date"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+    <ImageView
+        android:id="@+id/navigation_drawer_icon"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:src="@drawable/navigation_drawer_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        android:background="@drawable/tomato_background_right_oriented"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/gilroy"
         android:gravity="center"
-        android:text="BOOK"
-        android:textColor="@color/white"
+        android:text="Book a Table"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

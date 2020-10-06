@@ -58,8 +58,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     private void setData()
     {
 
-        Glide.with(context).load(R.drawable.sri_lankan).into(recommended_food_icon);
+       Glide.with(context).load(R.drawable.sri_lankan).into(recommended_food_icon);
         navigation_drawer_icon.setOnClickListener(this);
+
 
 
         ArrayList<Type> arrayList = new ArrayList<>();
@@ -122,6 +123,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         {
             showNavigationDialog();
         }
+      //  else if(view== foodList){
+     //       showRestuarants();
+    //    }
     }
 
     private void showNavigationDialog()
@@ -132,6 +136,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener
             activity.showNavigationDialog();
         }
     }
+
+   // public void showRestuarants(){
+ //       Fragment fragment = new RestuarantFragment(context,manager);
+  //      getActivity().getSupportFragmentManager()
+  //              .beginTransaction().replace(R.id.popularList,fragment)
+   //             .addToBackStack(null).commit();
+
+  //  }
+
+
     public void Login(View view)
     {
         Toast.makeText(context, "Clciked", Toast.LENGTH_SHORT).show();
