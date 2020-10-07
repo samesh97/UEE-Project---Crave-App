@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             if (isWantToLeave)
             {
                 finish();
-                super.onBackPressed();
             }
             else
             {
