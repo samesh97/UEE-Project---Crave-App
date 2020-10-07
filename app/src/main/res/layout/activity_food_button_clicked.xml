@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodButtonClicked">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/ash_color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <ImageView
+            android:id="@+id/navigation_drawer_icon"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/navigation_drawer_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="124dp"
+        android:layout_height="157dp"
+        app:srcCompat="@drawable/chef"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chicken Pizza"
+        android:textColor="#F32D13"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="95dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrediants"
+        android:textColor="#F32D13"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textColor="#F32D13"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="455dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textColor="#F32D13"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="529dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="359dp"
+        android:layout_height="89dp"
+        android:background="@drawable/tomato_background_right_oriented"
+        android:text="Add to Cart"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="604dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

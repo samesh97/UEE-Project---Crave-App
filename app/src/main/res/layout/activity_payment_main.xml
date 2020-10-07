@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentMain">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/ash_color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <ImageView
+            android:id="@+id/navigation_drawer_icon"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/navigation_drawer_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnSelectLocation"
+        android:layout_width="343dp"
+        android:layout_height="140dp"
+        android:background="@drawable/tomato_background_right_oriented"
+        android:text="Select Location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="85dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Charges    -     "
+        android:textColor="#F32D13"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="235dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total    -    "
+        android:textColor="#F32D13"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's Pay"
+        android:textColor="#F32D13"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <Button
+        android:id="@+id/btnCashOnDelivery"
+        android:layout_width="363dp"
+        android:layout_height="163dp"
+        android:background="@drawable/tomato_background_left_oriented"
+        android:text="Cash On Delivery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <Button
+        android:id="@+id/btnCreditDebitCard"
+        android:layout_width="364dp"
+        android:layout_height="180dp"
+        android:background="@drawable/tomato_background_right_oriented"
+        android:text="Credit / Debit Card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="535dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

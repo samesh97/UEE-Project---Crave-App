@@ -9,26 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".fragments.TableFragment">
-
-
-        </activity>
-        <activity android:name=".fragments.RestuarantViewFragment">
-
-
-            </activity>
-        <activity android:name=".fragments.RestuarantFragment" >
-
-
-
-        </activity>
+        <activity android:name=".SelectLocation"></activity>
+        <activity android:name=".FoodButtonClicked" />
+        <activity android:name=".PaymentCreditDebit" />
+        <activity android:name=".PaymentMain" />
+        <activity android:name=".fragments.TableFragment" />
+        <activity android:name=".fragments.RestuarantViewFragment" />
+        <activity android:name=".fragments.RestuarantFragment" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

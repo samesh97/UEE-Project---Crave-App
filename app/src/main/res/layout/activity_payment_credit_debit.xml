@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentCreditDebit">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ash_color_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+            <ImageView
+                android:id="@+id/navigation_drawer_icon"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/navigation_drawer_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit / Debit Card"
+            android:textColor="#FE724C"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="95dp" />
+
+        <EditText
+            android:id="@+id/editTextNumber2"
+            android:layout_width="364dp"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:hint="Card Number"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="365dp"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="211dp" />
+
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="363dp"
+            android:layout_height="66dp"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="369dp" />
+
+        <EditText
+            android:id="@+id/editTextNumber3"
+            android:layout_width="356dp"
+            android:layout_height="68dp"
+            android:ems="10"
+            android:hint="CVV"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.418"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="453dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName5"
+            android:layout_width="357dp"
+            android:layout_height="69dp"
+            android:ems="10"
+            android:hint="Security Code"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="548dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="244dp"
+            android:layout_height="120dp"
+            android:background="@drawable/tomato_background_right_oriented"
+            android:text="PAY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="608dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
