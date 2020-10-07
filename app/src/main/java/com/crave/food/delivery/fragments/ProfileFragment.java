@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.crave.food.delivery.R;
+
 public class ProfileFragment extends Fragment
 {
     private Context context;
@@ -25,6 +27,8 @@ public class ProfileFragment extends Fragment
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_profile,container,false);
+        return view;
     }
 }

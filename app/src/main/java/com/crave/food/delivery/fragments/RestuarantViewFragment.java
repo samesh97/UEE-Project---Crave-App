@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
+import com.crave.food.delivery.models.Type;
 
 public class RestuarantViewFragment extends Fragment implements View.OnClickListener {
 
@@ -27,11 +28,13 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
 
     private ImageView navigation_drawer_icon;
     private Button btn_bookATable;
+    private Type type;
 
-    public RestuarantViewFragment(Context context,FragmentManager manager)
+    public RestuarantViewFragment(Context context, FragmentManager manager, Type type)
     {
         this.context = context;
         this.manager = manager;
+        this.type = type;
     }
 
     @Nullable

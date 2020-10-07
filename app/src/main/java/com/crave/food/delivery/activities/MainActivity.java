@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
+import com.crave.food.delivery.fragments.ProfileFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout navigation_drawer;
 
     private boolean isWantToLeave = false;
+    private HomeFragment homeFragment = null;
 
     @Override
     public void onBackPressed()
@@ -69,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         initViews();
-        setFragment(new HomeFragment(MainActivity.this,getSupportFragmentManager()));
+        homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
+        setFragment(homeFragment);
 
 
     }
@@ -110,9 +113,20 @@ public class MainActivity extends AppCompatActivity {
             showNavigationDialog();
     }
 
+    public void Profile(View view)
+    {
+        setFragment(new ProfileFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+
     public void onHomeClicked(View view)
     {
-        setFragment(new HomeFragment(MainActivity.this,getSupportFragmentManager()));
+        if(homeFragment == null)
+        {
+            homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
+        }
+        setFragment(homeFragment);
         if(isNavigationOpened())
             showNavigationDialog();
     }
@@ -124,21 +138,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onRestuarantViewClicked(Type type)
     {
-        setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager()));
+        setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager(),type));
         if(isNavigationOpened())
             showNavigationDialog();
     }
 
     public void onRestuarantClicked(Restuarant restuarant)
     {
-        setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager()));
+        setFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
     public void setFragment(int layout,Fragment fragment)
     {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(layout, fragment).commit();
+        ft.replace(layout, fragment).addToBackStack(null).commit();
     }
 
 

@@ -25,6 +25,7 @@ import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
 import com.crave.food.delivery.listeners.OnCategoryClicked;
 import com.crave.food.delivery.listeners.OnRestuarantClicked;
+import com.crave.food.delivery.models.Category;
 import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     private FragmentManager manager;
     private RecyclerView foodList;
     private FrameLayout home_sub_frame_layout;
+
+
+    private SearchFragment searchFragment = null;
 
 
     private ImageView navigation_drawer_icon;
@@ -61,12 +65,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     {
         navigation_drawer_icon.setOnClickListener(this);
         ArrayList<Type> arrayList = new ArrayList<>();
-        arrayList.add(getTypeObject("Sri Lankan",getResources().getDrawable(R.drawable.sri_lankan)));
-        arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese)));
-        arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.indian)));
-        arrayList.add(getTypeObject("Bakery",getResources().getDrawable(R.drawable.bakery)));
-        arrayList.add(getTypeObject("Desserts",getResources().getDrawable(R.drawable.desserts)));
-        arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.juice_bars)));
+        arrayList.add(getTypeObject("Sri Lankan",getResources().getDrawable(R.drawable.sri_lankan), Category.SRI_LANKAN));
+        arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese),Category.CHINESE));
+        arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.indian),Category.INDIAN));
+        arrayList.add(getTypeObject("Bakery",getResources().getDrawable(R.drawable.bakery),Category.BAKERY));
+        arrayList.add(getTypeObject("Desserts",getResources().getDrawable(R.drawable.desserts),Category.DESSERTS));
+        arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.juice_bars),Category.JUICE_BARS));
 
         TypeListAdapter adapter = new TypeListAdapter(context, arrayList, new OnCategoryClicked() {
             @Override
@@ -74,7 +78,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 if(context instanceof MainActivity)
                 {
                     MainActivity activity = (MainActivity) context;
-                    activity.setFragment(R.id.home_sub_frame_layout,new SearchFragment(context));
+                    if(searchFragment == null)
+                    {
+                        searchFragment = new SearchFragment(context,type);
+                        activity.setFragment(R.id.home_sub_frame_layout,searchFragment);
+                    }
+                    else
+                    {
+                        searchFragment.updateView(type);
+                    }
+
                 }
             }
         });
@@ -123,11 +136,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener
             activity.showNavigationDialog();
         }
     }
-    public Type getTypeObject(String name, Drawable drawable)
+    public Type getTypeObject(String name, Drawable drawable,int category)
     {
         Type type = new Type();
         type.setName(name);
         type.setImageId(drawable);
+        type.setCategory(category);
         return type;
     }
 

@@ -8,6 +8,15 @@ public class Type implements Serializable
 {
     private Drawable imageId;
     private String name;
+    private int category;
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
     public Drawable getImageId() {
         return imageId;

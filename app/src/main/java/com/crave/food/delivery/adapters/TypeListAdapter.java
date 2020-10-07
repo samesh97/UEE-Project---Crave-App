@@ -77,12 +77,19 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                 @Override
                 public void onClick(View view)
                 {
+                    if(position != currentSelectedItem)
+                    {
+                        currentSelectedItem = position;
+                        notifyDataSetChanged();
+                        listener.onChange(type);
+                    }
 
-                    currentSelectedItem = position;
-                    notifyDataSetChanged();
-                    listener.onChange(type);
+
                 }
             });
+
+
+
 
             Glide.with(context).load(type.getImageId()).into(holder.icon);
 
