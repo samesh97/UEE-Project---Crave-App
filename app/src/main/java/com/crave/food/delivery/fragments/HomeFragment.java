@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 if(context instanceof MainActivity)
                 {
                     MainActivity mainActivity = (MainActivity) context;
-                    mainActivity.onRestuarantClicked(type);
+                    mainActivity.onRestuarantViewClicked(type);
                 }
             }
         });
