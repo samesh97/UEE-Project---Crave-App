@@ -1,61 +1,66 @@
-package com.crave.food.delivery;
+package com.crave.food.delivery.fragments;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Dialog;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
+import com.crave.food.delivery.activities.MainActivity;
+import com.crave.food.delivery.R;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
-import com.crave.food.delivery.config.Methods;
 import com.crave.food.delivery.models.Type;
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener
+{
+    private Context context;
+    private FragmentManager manager;
+
+
 
     private RecyclerView foodList;
     private RecyclerView popularList;
     private ImageView recommended_food_icon;
     private ImageView navigation_drawer_icon;
-    private NavigationView navigationView;
-    private DrawerLayout navigation_drawer;
 
 
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initViews();
-        setData();
-
-
-
+    public HomeFragment(Context context,FragmentManager manager)
+    {
+        this.context = context;
+        this.manager = manager;
     }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        View view1 = LayoutInflater.from(context).inflate(R.layout.layout_home,null);
+        initViews(view1);
+        setData();
+        return view1;
+    }
+
 
     private void setData()
     {
 
-        Glide.with(getApplicationContext()).load(R.drawable.sri_lankan).into(recommended_food_icon);
+       Glide.with(context).load(R.drawable.sri_lankan).into(recommended_food_icon);
         navigation_drawer_icon.setOnClickListener(this);
+
 
 
         ArrayList<Type> arrayList = new ArrayList<>();
@@ -66,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         arrayList.add(getTypeObject("Desserts",getResources().getDrawable(R.drawable.desserts)));
         arrayList.add(getTypeObject("Juice Bars",getResources().getDrawable(R.drawable.juice_bars)));
 
-        TypeListAdapter adapter = new TypeListAdapter(getApplicationContext(),arrayList);
+        TypeListAdapter adapter = new TypeListAdapter(context,arrayList);
 
-        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setOrientation(RecyclerView.HORIZONTAL);
         foodList.setLayoutManager(manager);
         foodList.setAdapter(adapter);
@@ -87,21 +92,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         arrayList1.add(getTypeObject("Burger King",getResources().getDrawable(R.drawable.burger_king)));
 
 
-        PopularListAdapter adapter1 = new PopularListAdapter(getApplicationContext(),arrayList1);
-        LinearLayoutManager manager1 = new LinearLayoutManager(getApplicationContext());
+        PopularListAdapter adapter1 = new PopularListAdapter(context,arrayList1);
+        LinearLayoutManager manager1 = new LinearLayoutManager(context);
         manager1.setOrientation(RecyclerView.HORIZONTAL);
         popularList.setLayoutManager(manager1);
         popularList.setAdapter(adapter1);
         popularList.setItemViewCacheSize(arrayList.size());
     }
-    private void initViews()
+    private void initViews(View view)
     {
-        foodList = findViewById(R.id.foodList);
-        popularList = findViewById(R.id.popularList);
-        recommended_food_icon = findViewById(R.id.recommended_food_icon);
-        navigation_drawer_icon = findViewById(R.id.navigation_drawer_icon);
-        navigationView = findViewById(R.id.navigationView);
-        navigation_drawer = findViewById(R.id.navigation_drawer);
+        foodList = view.findViewById(R.id.foodList);
+        popularList = view.findViewById(R.id.popularList);
+        recommended_food_icon = view.findViewById(R.id.recommended_food_icon);
+        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
 
 
     }
@@ -120,18 +123,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             showNavigationDialog();
         }
+      //  else if(view== foodList){
+     //       showRestuarants();
+    //    }
     }
 
     private void showNavigationDialog()
     {
+        if(context instanceof MainActivity)
+        {
+            MainActivity activity = (MainActivity) context;
+            activity.showNavigationDialog();
+        }
+    }
 
-        if(navigation_drawer.isDrawerOpen(navigationView))
-        {
-            navigation_drawer.closeDrawer(navigationView,true);
-        }
-        else
-        {
-            navigation_drawer.openDrawer(navigationView,true);
-        }
+   // public void showRestuarants(){
+ //       Fragment fragment = new RestuarantFragment(context,manager);
+  //      getActivity().getSupportFragmentManager()
+  //              .beginTransaction().replace(R.id.popularList,fragment)
+   //             .addToBackStack(null).commit();
+
+  //  }
+
+
+    public void Login(View view)
+    {
+        Toast.makeText(context, "Clciked", Toast.LENGTH_SHORT).show();
     }
 }
