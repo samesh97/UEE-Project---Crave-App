@@ -43,9 +43,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener
     private void setData()
     {
         login_animation.setRepeatCount(LottieDrawable.INFINITE);
-        login_animation.setAnimation(R.raw.login_vector);
-        login_animation.setRenderMode(RenderMode.SOFTWARE);
-        login_animation.playAnimation();
+//        login_animation.setAnimation(R.raw.login_vector);
+//        login_animation.setRenderMode(RenderMode.SOFTWARE);
+//        login_animation.playAnimation();
 
         navigation_drawer_icon.setOnClickListener(this);
 
