@@ -119,9 +119,5 @@ public class SearchFragment extends Fragment
 
         return arrayList1;
     }
-    public void updateView(Type type)
-    {
-        this.type = type;
-        setData();
-    }
+
 }

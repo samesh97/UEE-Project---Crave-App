@@ -21,8 +21,10 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
 {
     private Context context;
     private ArrayList<Type> list;
-    private int currentSelectedItem  = -99;
+    private static int currentSelectedItem  = 0;
     private OnCategoryClicked listener;
+
+    public static Type selectedType;
 
     public TypeListAdapter(Context context, ArrayList<Type> list, OnCategoryClicked listener)
     {
@@ -82,6 +84,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
                         currentSelectedItem = position;
                         notifyDataSetChanged();
                         listener.onChange(type);
+                        selectedType = type;
                     }
 
 

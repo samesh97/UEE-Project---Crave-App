@@ -3,9 +3,9 @@ package com.crave.food.delivery.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -72,17 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
         homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
-        setFragment(homeFragment);
+        replaceFragment(homeFragment);
 
 
     }
 
-    private void setFragment(Fragment fragment)
-    {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
-        //getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).commit();
-    }
 
     private void initViews()
     {
@@ -108,14 +102,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void Login(View view)
     {
-        setFragment(new LoginFragment(MainActivity.this,getSupportFragmentManager()));
+        replaceFragment(new LoginFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
 
     public void Profile(View view)
     {
-        setFragment(new ProfileFragment(MainActivity.this,getSupportFragmentManager()));
+        replaceFragment(new ProfileFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
@@ -126,33 +120,33 @@ public class MainActivity extends AppCompatActivity {
         {
             homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
         }
-        setFragment(homeFragment);
+        replaceFragment(homeFragment);
         if(isNavigationOpened())
             showNavigationDialog();
     }
     public void onRegisterClicked(View view)
     {
-        setFragment(new RegisterFragment(MainActivity.this,getSupportFragmentManager()));
+        replaceFragment(new RegisterFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
     public void onRestuarantViewClicked(Type type)
     {
-        setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager(),type));
+        replaceFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager(),type));
         if(isNavigationOpened())
             showNavigationDialog();
     }
 
     public void onRestuarantClicked(Restuarant restuarant)
     {
-        setFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
+        replaceFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
     public void setFragment(int layout,Fragment fragment)
     {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(layout, fragment).addToBackStack(null).commit();
+        ft.setCustomAnimations(R.anim.bottom_to_top,0).replace(layout, fragment).commit();
     }
 
 
@@ -164,6 +158,26 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+    private void replaceFragment (Fragment fragment)
+    {
+        String backStateName =  fragment.getClass().getName();
+        String fragmentTag = backStateName;
+
+        FragmentManager manager = getSupportFragmentManager();
+        boolean fragmentPopped = manager.popBackStackImmediate (backStateName, 0);
+
+        if (!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null){ //fragment not in back stack, create it.
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.replace(R.id.frame_layout, fragment, fragmentTag);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.addToBackStack(backStateName);
+            ft.commit();
+        }
+        else
+        {
+            Toast.makeText(this, "Already created", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

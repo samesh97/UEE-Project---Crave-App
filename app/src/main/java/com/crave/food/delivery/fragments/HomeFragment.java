@@ -36,12 +36,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     private FragmentManager manager;
     private RecyclerView foodList;
     private FrameLayout home_sub_frame_layout;
-
-
-    private SearchFragment searchFragment = null;
-
-
     private ImageView navigation_drawer_icon;
+
+
+
+    public static boolean isPopularList = true;
 
 
     public HomeFragment(Context context,FragmentManager manager)
@@ -65,6 +64,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     {
         navigation_drawer_icon.setOnClickListener(this);
         ArrayList<Type> arrayList = new ArrayList<>();
+        arrayList.add(getTypeObject("Popular",getResources().getDrawable(R.drawable.sri_lankan), Category.POPULAR));
         arrayList.add(getTypeObject("Sri Lankan",getResources().getDrawable(R.drawable.sri_lankan), Category.SRI_LANKAN));
         arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese),Category.CHINESE));
         arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.indian),Category.INDIAN));
@@ -78,15 +78,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 if(context instanceof MainActivity)
                 {
                     MainActivity activity = (MainActivity) context;
-                    if(searchFragment == null)
+
+                    if(type.getCategory() == Category.POPULAR)
                     {
-                        searchFragment = new SearchFragment(context,type);
-                        activity.setFragment(R.id.home_sub_frame_layout,searchFragment);
+                        PopularRecommendedFragment fragment = new PopularRecommendedFragment(context);
+                        activity.setFragment(R.id.home_sub_frame_layout,fragment);
+                        isPopularList = true;
+
                     }
                     else
                     {
-                        searchFragment.updateView(type);
+                        SearchFragment searchFragment = new SearchFragment(context,type);
+                        activity.setFragment(R.id.home_sub_frame_layout,searchFragment);
+                        isPopularList = false;
                     }
+
 
                 }
             }
@@ -102,7 +108,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         if(context instanceof MainActivity)
         {
             MainActivity activity = (MainActivity) context;
-            activity.setFragment(R.id.home_sub_frame_layout,new PopularRecommendedFragment(context));
+            if(isPopularList)
+            {
+                activity.setFragment(R.id.home_sub_frame_layout,new PopularRecommendedFragment(context));
+            }
+            else
+            {
+                activity.setFragment(R.id.home_sub_frame_layout,new SearchFragment(context,TypeListAdapter.selectedType));
+            }
+
         }
 
     }
@@ -123,9 +137,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         {
             showNavigationDialog();
         }
-      //  else if(view== foodList){
-     //       showRestuarants();
-    //    }
+
     }
 
     private void showNavigationDialog()
@@ -144,15 +156,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         type.setCategory(category);
         return type;
     }
-
-   // public void showRestuarants(){
- //       Fragment fragment = new RestuarantFragment(context,manager);
-  //      getActivity().getSupportFragmentManager()
-  //              .beginTransaction().replace(R.id.popularList,fragment)
-   //             .addToBackStack(null).commit();
-
-  //  }
-
 
     public void Login(View view)
     {
