@@ -43,6 +43,7 @@
         android:maxLines="1"
         android:ellipsize="end"
         android:minLines="1"
+        android:fontFamily="@font/gilroy"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/image_background"
         app:layout_constraintEnd_toEndOf="@+id/image_background"

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crave.food.delivery.R;
@@ -29,6 +30,8 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     private ImageView navigation_drawer_icon;
     private Button btn_bookATable;
     private Type type;
+
+    private TextView name,hotelAddress;
 
     public RestuarantViewFragment(Context context, FragmentManager manager, Type type)
     {
@@ -50,6 +53,9 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     private void setData() {
         navigation_drawer_icon.setOnClickListener(this);
         btn_bookATable.setOnClickListener(this);
+
+        name.setText(type.getName());
+        hotelAddress.setText(type.getAddress());
     }
 
     private void initViews(View view)
@@ -57,6 +63,8 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
 
         navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
         btn_bookATable = view.findViewById(R.id.btn_bookTable);
+        name = view.findViewById(R.id.textView5);
+        hotelAddress = view.findViewById(R.id.hotelAddress);
 
     }
     @Override

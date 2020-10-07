@@ -20,6 +20,7 @@ import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
+import com.crave.food.delivery.config.Methods;
 import com.crave.food.delivery.listeners.OnRestuarantClicked;
 import com.crave.food.delivery.models.Type;
 
@@ -56,14 +57,7 @@ public class PopularRecommendedFragment extends Fragment
 
 
 
-        ArrayList<Type> arrayList1 = new ArrayList<>();
-        arrayList1.add(getTypeObject("McDonalds",getResources().getDrawable(R.drawable.mc_donald)));
-        arrayList1.add(getTypeObject("Pizza Hut",getResources().getDrawable(R.drawable.pizza_hut)));
-        arrayList1.add(getTypeObject("Biriyani Bowl",getResources().getDrawable(R.drawable.biriyani_bowl)));
-        arrayList1.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese)));
-        arrayList1.add(getTypeObject("KFC",getResources().getDrawable(R.drawable.kfc)));
-        arrayList1.add(getTypeObject("Indian Spices",getResources().getDrawable(R.drawable.indian_spices)));
-        arrayList1.add(getTypeObject("Burger King",getResources().getDrawable(R.drawable.burger_king)));
+        ArrayList<Type> arrayList1 = Methods.getPopularList(context);
 
 
         PopularListAdapter adapter1 = new PopularListAdapter(context, arrayList1, new OnRestuarantClicked() {
@@ -89,11 +83,5 @@ public class PopularRecommendedFragment extends Fragment
         popularList = view.findViewById(R.id.popularList);
         recommended_food_icon = view.findViewById(R.id.recommended_food_icon);
     }
-    public Type getTypeObject(String name, Drawable drawable)
-    {
-        Type type = new Type();
-        type.setName(name);
-        type.setImageId(drawable);
-        return type;
-    }
+
 }

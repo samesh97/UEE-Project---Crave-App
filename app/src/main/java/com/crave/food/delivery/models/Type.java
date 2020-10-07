@@ -9,6 +9,15 @@ public class Type implements Serializable
     private Drawable imageId;
     private String name;
     private int category;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public int getCategory() {
         return category;

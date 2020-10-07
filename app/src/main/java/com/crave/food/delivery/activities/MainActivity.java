@@ -174,10 +174,7 @@ public class MainActivity extends AppCompatActivity {
             ft.addToBackStack(backStateName);
             ft.commit();
         }
-        else
-        {
-            Toast.makeText(this, "Already created", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
 }
