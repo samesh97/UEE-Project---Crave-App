@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         initViews();
-        setFragment(new HomeFragment(MainActivity.this,getSupportFragmentManager()));
+        setFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
 
 
     }
@@ -125,6 +125,16 @@ public class MainActivity extends AppCompatActivity {
         if(isNavigationOpened())
             showNavigationDialog();
     }
+
+    public void onRestuarantClicked(Type type)
+    {
+        setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+
+
+
     public boolean isNavigationOpened()
     {
         if(navigation_drawer.isDrawerOpen(navigationView))

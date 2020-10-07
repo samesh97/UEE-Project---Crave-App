@@ -20,7 +20,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
+import com.crave.food.delivery.adapters.PopularListAdapter;
+import com.crave.food.delivery.adapters.RestuarantListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
+import com.crave.food.delivery.listeners.OnRestuarantClick;
+import com.crave.food.delivery.listeners.OnRestuarantClicked;
+import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
@@ -32,8 +37,9 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         private FragmentManager manager;
 
         private RecyclerView foodList;
+        private RecyclerView restuarantList;
         private ImageView navigation_drawer_icon;
-     //   private RecyclerView restuarantList;
+
 
     public RestuarantFragment(Context context,FragmentManager manager)
     {
@@ -72,13 +78,43 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         foodList.setItemViewCacheSize(arrayList.size());
 
 
+        ArrayList<Restuarant> arrayList1 = new ArrayList<>();
+        arrayList1.add(getRestuarantObject("McDonalds","Galle Road,Colombo",getResources().getDrawable(R.drawable.mc_donald)));
+        arrayList1.add(getRestuarantObject("Pizza Hut","galle",getResources().getDrawable(R.drawable.pizza_hut)));
+        arrayList1.add(getRestuarantObject("Biriyani Bowl","galle",getResources().getDrawable(R.drawable.biriyani_bowl)));
+        arrayList1.add(getRestuarantObject("Chinese","matara",getResources().getDrawable(R.drawable.chinese)));
+        arrayList1.add(getRestuarantObject("KFC","colombo",getResources().getDrawable(R.drawable.kfc)));
+        arrayList1.add(getRestuarantObject("Indian Spices","Kandy",getResources().getDrawable(R.drawable.indian_spices)));
+        arrayList1.add(getRestuarantObject("Burger King","Matara",getResources().getDrawable(R.drawable.burger_king)));
+
+
+   /*     RestuarantListAdapter adapter1 = new RestuarantListAdapter(context, arrayList1, new OnRestuarantClick() {
+            @Override
+            public void onChange(Type type) {
+                if(context instanceof MainActivity)
+                {
+                    MainActivity mainActivity = (MainActivity) context;
+                    mainActivity.onRestuarantViewClick(restuarant);
+                }
+            }
+        });
+
+
+        LinearLayoutManager manager1 = new LinearLayoutManager(context);
+        manager1.setOrientation(RecyclerView.VERTICAL);
+        restuarantList.setLayoutManager(manager1);
+        restuarantList.setAdapter(adapter1);
+        restuarantList.setItemViewCacheSize(arrayList1.size());
+*/
     }
+
+
 
     private void initViews(View view)
     {
         foodList = view.findViewById(R.id.foodList);
         navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
-      //  restuarantList=view.findViewById(R.id.restuarantList);
+        restuarantList=view.findViewById(R.id.restuarantList);
 
     }
 
@@ -89,6 +125,15 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         type.setImageId(drawable);
         return type;
     }
+
+    public Restuarant getRestuarantObject(String name, String location,Drawable drawable)
+    {
+        Restuarant res = new Restuarant();
+        res.setResturant(name);
+        res.setLocation(location);
+        res.setImageId(drawable);
+        return res;
+    }
     @Override
     public void onClick(View view)
     {
@@ -96,6 +141,8 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         {
             showNavigationDialog();
         }
+
+
 
     }
 

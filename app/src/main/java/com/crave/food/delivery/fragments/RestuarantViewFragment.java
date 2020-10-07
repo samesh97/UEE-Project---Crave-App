@@ -90,11 +90,4 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     }
 
 
-
-    public void Login(View view)
-    {
-        Toast.makeText(context, "Clciked", Toast.LENGTH_SHORT).show();
-    }
-
-
 }

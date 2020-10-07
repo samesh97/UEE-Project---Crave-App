@@ -17,6 +17,7 @@
         android:background="@drawable/tomato_background_right_oriented"
         android:fontFamily="@font/gilroy"
         android:gravity="center"
+        android:onClick="onClick"
         android:text="BOOK"
         android:textColor="@color/white"
         android:textSize="19sp"
