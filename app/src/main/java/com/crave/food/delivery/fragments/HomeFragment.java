@@ -21,6 +21,7 @@ import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
+import com.crave.food.delivery.listeners.OnRestuarantClicked;
 import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
@@ -92,7 +93,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         arrayList1.add(getTypeObject("Burger King",getResources().getDrawable(R.drawable.burger_king)));
 
 
-        PopularListAdapter adapter1 = new PopularListAdapter(context,arrayList1);
+        PopularListAdapter adapter1 = new PopularListAdapter(context, arrayList1, new OnRestuarantClicked() {
+            @Override
+            public void onChange(Type type) {
+                if(context instanceof MainActivity)
+                {
+                    MainActivity mainActivity = (MainActivity) context;
+                    mainActivity.onRestuarantClicked(type);
+                }
+            }
+        });
         LinearLayoutManager manager1 = new LinearLayoutManager(context);
         manager1.setOrientation(RecyclerView.HORIZONTAL);
         popularList.setLayoutManager(manager1);

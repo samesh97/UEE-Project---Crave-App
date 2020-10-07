@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.listeners.OnRestuarantClicked;
 import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
@@ -20,11 +21,13 @@ public class PopularListAdapter extends RecyclerView.Adapter<PopularListAdapter.
 {
     private Context context;
     private ArrayList<Type> list;
+    private OnRestuarantClicked listener;
 
-    public PopularListAdapter(Context context, ArrayList<Type> list)
+    public PopularListAdapter(Context context, ArrayList<Type> list,OnRestuarantClicked listener)
     {
         this.context = context;
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,10 +43,17 @@ public class PopularListAdapter extends RecyclerView.Adapter<PopularListAdapter.
     {
         if(list != null && list.size() > position)
         {
-            Type type = list.get(position);
+            final Type type = list.get(position);
             holder.title.setText(type.getName());
 
             Glide.with(context).load(type.getImageId()).into(holder.icon);
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onChange(type);
+                }
+            });
 
         }
     }

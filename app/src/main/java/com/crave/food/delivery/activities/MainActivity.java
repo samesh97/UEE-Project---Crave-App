@@ -13,6 +13,8 @@ import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
+import com.crave.food.delivery.fragments.RestuarantFragment;
+import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -102,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
     public void onRegisterClicked(View view)
     {
         setFragment(new RegisterFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void onRestuarantClicked(Type type)
+    {
+        setFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }

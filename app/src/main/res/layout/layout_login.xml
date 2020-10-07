@@ -37,6 +37,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:lottie_rawRes="@raw/login_vector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -146,6 +147,7 @@
             android:ellipsize="end"
             android:fontFamily="@font/gilroy"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textSize="15sp"
             android:maxLines="1"
             android:minLines="1"
