@@ -5,9 +5,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.crave.food.delivery.R;
@@ -132,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
         setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
+    }
+    public void setFragment(int layout,Fragment fragment)
+    {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(layout, fragment).commit();
     }
 
 

@@ -23,6 +23,7 @@ import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.adapters.PopularListAdapter;
 import com.crave.food.delivery.adapters.RestuarantListAdapter;
 import com.crave.food.delivery.adapters.TypeListAdapter;
+import com.crave.food.delivery.listeners.OnCategoryClicked;
 import com.crave.food.delivery.listeners.OnRestuarantClick;
 import com.crave.food.delivery.listeners.OnRestuarantClicked;
 import com.crave.food.delivery.models.Restuarant;
@@ -69,7 +70,12 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         arrayList.add(getTypeObject("Desserts", getResources().getDrawable(R.drawable.desserts)));
         arrayList.add(getTypeObject("Juice Bars", getResources().getDrawable(R.drawable.juice_bars)));
 
-        TypeListAdapter adapter = new TypeListAdapter(context, arrayList);
+        TypeListAdapter adapter = new TypeListAdapter(context, arrayList, new OnCategoryClicked() {
+            @Override
+            public void onChange(Type type) {
+
+            }
+        });
 
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setOrientation(RecyclerView.HORIZONTAL);

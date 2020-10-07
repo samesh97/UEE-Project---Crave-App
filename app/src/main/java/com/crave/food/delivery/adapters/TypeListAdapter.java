@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.listeners.OnCategoryClicked;
 import com.crave.food.delivery.models.Type;
 
 import java.util.ArrayList;
@@ -20,12 +21,14 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
 {
     private Context context;
     private ArrayList<Type> list;
-    private int currentSelectedItem  = 0;
+    private int currentSelectedItem  = -99;
+    private OnCategoryClicked listener;
 
-    public TypeListAdapter(Context context, ArrayList<Type> list)
+    public TypeListAdapter(Context context, ArrayList<Type> list, OnCategoryClicked listener)
     {
         this.context = context;
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -41,7 +44,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
     {
         if(list != null && list.size() > position)
         {
-            Type type = list.get(position);
+            final Type type = list.get(position);
             holder.title.setText(type.getName());
             if(currentSelectedItem == position)
             {
@@ -77,6 +80,7 @@ public class TypeListAdapter extends RecyclerView.Adapter<TypeListAdapter.MyView
 
                     currentSelectedItem = position;
                     notifyDataSetChanged();
+                    listener.onChange(type);
                 }
             });
 
