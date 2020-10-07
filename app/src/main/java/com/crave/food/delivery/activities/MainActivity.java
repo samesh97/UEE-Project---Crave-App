@@ -16,6 +16,7 @@ import com.crave.food.delivery.fragments.LoginFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
+import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         initViews();
-        setFragment(new RestuarantFragment(MainActivity.this,getSupportFragmentManager()));
+        setFragment(new HomeFragment(MainActivity.this,getSupportFragmentManager()));
 
 
     }
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             showNavigationDialog();
     }
 
-    public void onRestuarantClicked(Type type)
+    public void onRestuarantClicked(Restuarant restuarant)
     {
         setFragment(new RestuarantViewFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())

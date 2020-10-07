@@ -88,13 +88,13 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         arrayList1.add(getRestuarantObject("Burger King","Matara",getResources().getDrawable(R.drawable.burger_king)));
 
 
-   /*     RestuarantListAdapter adapter1 = new RestuarantListAdapter(context, arrayList1, new OnRestuarantClick() {
+       RestuarantListAdapter adapter1 = new RestuarantListAdapter(context, arrayList1, new OnRestuarantClick() {
             @Override
-            public void onChange(Type type) {
+            public void onChange(Restuarant restuarant) {
                 if(context instanceof MainActivity)
                 {
                     MainActivity mainActivity = (MainActivity) context;
-                    mainActivity.onRestuarantViewClick(restuarant);
+                    mainActivity.onRestuarantClicked(restuarant);
                 }
             }
         });
@@ -105,7 +105,7 @@ public class RestuarantFragment extends Fragment implements View.OnClickListener
         restuarantList.setLayoutManager(manager1);
         restuarantList.setAdapter(adapter1);
         restuarantList.setItemViewCacheSize(arrayList1.size());
-*/
+
     }
 
 
