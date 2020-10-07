@@ -32,11 +32,13 @@
             android:layout_toEndOf="@id/foodIcon"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="LKR 500.00"
-            android:id="@+id/PriceFav"
+            android:text="Discription"
+            android:id="@+id/disFave"
+            android:fontFamily="@font/gilroy"
             android:textSize="18dp"
             android:textColor="#a9a9a9"
             android:layout_toRightOf="@id/foodIcon"
@@ -45,19 +47,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_below="@id/titleFav"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Discription"
-            android:id="@+id/disFave"
-            android:textSize="18dp"
-            android:textColor="#a9a9a9"
-            android:layout_toRightOf="@id/foodIcon"
-            android:layout_toEndOf="@id/foodIcon"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@id/PriceFav"/>
+
 
 
 
