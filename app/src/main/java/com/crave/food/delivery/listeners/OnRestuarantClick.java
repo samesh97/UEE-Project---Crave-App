@@ -3,12 +3,8 @@ package com.crave.food.delivery.listeners;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 
-public interface OnRestuarantClicked
-{
-    public void onChange(Type type);
+public interface OnRestuarantClick {
+
+        public void onChange(Restuarant restuarant );
+
 }
-
-
-
-
-
