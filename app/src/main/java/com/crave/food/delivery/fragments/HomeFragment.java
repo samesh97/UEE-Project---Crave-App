@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -37,6 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     private RecyclerView foodList;
     private FrameLayout home_sub_frame_layout;
     private ImageView navigation_drawer_icon;
+    private EditText editText;
 
 
 
@@ -62,6 +65,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener
 
     private void setData()
     {
+
+        editText.postDelayed(new Runnable() {
+            @Override
+            public void run()
+            {
+                  InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                  imm.hideSoftInputFromWindow(editText.getWindowToken(),0);
+            }
+        },500);
+
+
         navigation_drawer_icon.setOnClickListener(this);
         ArrayList<Type> arrayList = new ArrayList<>();
         arrayList.add(getTypeObject("Popular",getResources().getDrawable(R.drawable.search_icon), Category.POPULAR));
@@ -126,6 +140,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
         foodList = view.findViewById(R.id.foodList);
         home_sub_frame_layout = view.findViewById(R.id.home_sub_frame_layout);
+        editText = view.findViewById(R.id.editText);
 
     }
 
