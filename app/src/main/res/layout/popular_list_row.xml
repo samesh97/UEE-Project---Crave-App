@@ -11,10 +11,10 @@
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
-        android:background="@color/white"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
+        android:background="@color/orange"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,15 +23,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@color/white"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
 
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="110dp"
                 android:layout_height="0dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="32dp"
                 android:background="@color/white"
                 android:src="@drawable/burger"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -41,21 +41,64 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
-                android:maxLines="1"
                 android:minLines="1"
+                android:textSize="14sp"
+                android:ellipsize="middle"
+                android:text="Pizza Hut"
                 android:textColor="@color/orange"
                 app:layout_constraintEnd_toEndOf="@+id/icon"
                 app:layout_constraintStart_toStartOf="@+id/icon"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/ash"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon" >
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintBottom_toBottomOf="@+id/hotelAddress"
+                    app:layout_constraintEnd_toStartOf="@+id/hotelAddress"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="@+id/hotelAddress" />
+
+
+                <TextView
+                    android:id="@+id/hotelAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/gilroy"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Kottawa"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -48,6 +48,8 @@ public class PopularListAdapter extends RecyclerView.Adapter<PopularListAdapter.
 
             Glide.with(context).load(type.getImageId()).into(holder.icon);
 
+            holder.hotelAddress.setText(type.getAddress());
+
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -69,12 +71,14 @@ public class PopularListAdapter extends RecyclerView.Adapter<PopularListAdapter.
         ImageView image_background;
         TextView title;
         ImageView icon;
+        TextView hotelAddress;
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
             image_background = itemView.findViewById(R.id.image_background);
             title = itemView.findViewById(R.id.title);
             icon = itemView.findViewById(R.id.icon);
+            hotelAddress = itemView.findViewById(R.id.hotelAddress);
         }
     }
 }

@@ -45,7 +45,7 @@ public class Methods
         arrayList1.add(getTypeObject("McDonalds",context.getResources().getDrawable(R.drawable.mc_donald), Category.SRI_LANKAN,"Kottawa"));
         arrayList1.add(getTypeObject("Pizza Hut",context.getResources().getDrawable(R.drawable.pizza_hut),Category.SRI_LANKAN,"Maharagama"));
         arrayList1.add(getTypeObject("KFC",context.getResources().getDrawable(R.drawable.kfc),Category.SRI_LANKAN,"Kalutara"));
-        arrayList1.add(getTypeObject("Burger King",context.getResources().getDrawable(R.drawable.burger_king),Category.SRI_LANKAN,"Colombo7"));
+        arrayList1.add(getTypeObject("Burger King",context.getResources().getDrawable(R.drawable.burger_king),Category.SRI_LANKAN,"Colombo 7"));
         arrayList1.add(getTypeObject("Dominos",context.getResources().getDrawable(R.drawable.dominos),Category.SRI_LANKAN,"Panadura"));
 
         arrayList1.add(getTypeObject("Ceylon Spice Heaven",context.getResources().getDrawable(R.drawable.logo_ceylon_spice_heaven),Category.SRI_LANKAN,"Nugegoda"));
@@ -54,7 +54,7 @@ public class Methods
         arrayList1.add(getTypeObject("Raja bojun",context.getResources().getDrawable(R.drawable.logo_raja_bojun),Category.SRI_LANKAN,"Nugegoda"));
         arrayList1.add(getTypeObject("Colombo Rice&Curry",context.getResources().getDrawable(R.drawable.logo_colombo_rice_and_curry),Category.SRI_LANKAN,"Kalutara"));
         arrayList1.add(getTypeObject("The Hut",context.getResources().getDrawable(R.drawable.logo_the_hut),Category.SRI_LANKAN,"Panadura"));
-        arrayList1.add(getTypeObject("Summer Hut",context.getResources().getDrawable(R.drawable.logo_summer_hut_family_restuarant),Category.SRI_LANKAN,"Colombo3"));
+        arrayList1.add(getTypeObject("Summer Hut",context.getResources().getDrawable(R.drawable.logo_summer_hut_family_restuarant),Category.SRI_LANKAN,"Colombo 5"));
         arrayList1.add(getTypeObject("Thuna Paha",context.getResources().getDrawable(R.drawable.logo_thuna_paha_),Category.SRI_LANKAN,"Kotte"));
 
 
@@ -93,7 +93,7 @@ public class Methods
         arrayList1.add(getTypeObject("Mooseum",context.getResources().getDrawable(R.drawable.logo_mooseum_ice_cream), Category.DESSERTS,"Nugegoda"));
         arrayList1.add(getTypeObject("Cup Cake Kingdom",context.getResources().getDrawable(R.drawable.logo_cupcake_kingdom), Category.DESSERTS,"Kottawa"));
         arrayList1.add(getTypeObject("Isle Of Gelato",context.getResources().getDrawable(R.drawable.logo_isle_of_gelato), Category.DESSERTS,"Colombo"));
-        arrayList1.add(getTypeObject("Delauched Desserts",context.getResources().getDrawable(R.drawable.logo_delauched_desserts), Category.DESSERTS,"Colombo1"));
+        arrayList1.add(getTypeObject("Delauched Desserts",context.getResources().getDrawable(R.drawable.logo_delauched_desserts), Category.DESSERTS,"Colombo 8"));
         arrayList1.add(getTypeObject("Dream Scape",context.getResources().getDrawable(R.drawable.logo_dream_scape), Category.DESSERTS,"Kottawa"));
         arrayList1.add(getTypeObject("Delice Perle",context.getResources().getDrawable(R.drawable.logo_delice_perle), Category.DESSERTS,"Wattala"));
 
@@ -101,7 +101,7 @@ public class Methods
         arrayList1.add(getTypeObject("Lovetts",context.getResources().getDrawable(R.drawable.logo_lovetts), Category.JUICE_BARS,"Kotte"));
         arrayList1.add(getTypeObject("Costa",context.getResources().getDrawable(R.drawable.logo_costa_cofee), Category.JUICE_BARS,"Nugegoda"));
         arrayList1.add(getTypeObject("Cool Park",context.getResources().getDrawable(R.drawable.cool_park), Category.JUICE_BARS,"Kandy"));
-        arrayList1.add(getTypeObject("Fresco",context.getResources().getDrawable(R.drawable.logo_fresco), Category.JUICE_BARS,"Colombo1"));
+        arrayList1.add(getTypeObject("Fresco",context.getResources().getDrawable(R.drawable.logo_fresco), Category.JUICE_BARS,"Colombo 8"));
         arrayList1.add(getTypeObject("Rasa Juice Shop",context.getResources().getDrawable(R.drawable.logo_rasa_juice_shop), Category.JUICE_BARS,"Matara"));
         arrayList1.add(getTypeObject("Marine Smoothies",context.getResources().getDrawable(R.drawable.logo_marine_smoothies), Category.JUICE_BARS,"Colombo"));
 
@@ -116,6 +116,11 @@ public class Methods
             if(res)
             {
                 returnList.add(arrayList1.get(i));
+
+                if(returnList.size() > 8)
+                {
+                    return returnList;
+                }
             }
         }
 
@@ -127,7 +132,7 @@ public class Methods
         arrayList1.add(getTypeObject("McDonalds",context.getResources().getDrawable(R.drawable.mc_donald), Category.SRI_LANKAN,"Kottawa"));
         arrayList1.add(getTypeObject("Pizza Hut",context.getResources().getDrawable(R.drawable.pizza_hut),Category.SRI_LANKAN,"Maharagama"));
         arrayList1.add(getTypeObject("KFC",context.getResources().getDrawable(R.drawable.kfc),Category.SRI_LANKAN,"Kalutara"));
-        arrayList1.add(getTypeObject("Burger King",context.getResources().getDrawable(R.drawable.burger_king),Category.SRI_LANKAN,"Colombo7"));
+        arrayList1.add(getTypeObject("Burger King",context.getResources().getDrawable(R.drawable.burger_king),Category.SRI_LANKAN,"Colombo 7"));
         arrayList1.add(getTypeObject("Dominos",context.getResources().getDrawable(R.drawable.dominos),Category.SRI_LANKAN,"Panadura"));
 
         arrayList1.add(getTypeObject("Ceylon Spice Heaven",context.getResources().getDrawable(R.drawable.logo_ceylon_spice_heaven),Category.SRI_LANKAN,"Nugegoda"));
@@ -136,7 +141,7 @@ public class Methods
         arrayList1.add(getTypeObject("Raja bojun",context.getResources().getDrawable(R.drawable.logo_raja_bojun),Category.SRI_LANKAN,"Nugegoda"));
         arrayList1.add(getTypeObject("Colombo Rice&Curry",context.getResources().getDrawable(R.drawable.logo_colombo_rice_and_curry),Category.SRI_LANKAN,"Kalutara"));
         arrayList1.add(getTypeObject("The Hut",context.getResources().getDrawable(R.drawable.logo_the_hut),Category.SRI_LANKAN,"Panadura"));
-        arrayList1.add(getTypeObject("Summer Hut",context.getResources().getDrawable(R.drawable.logo_summer_hut_family_restuarant),Category.SRI_LANKAN,"Colombo3"));
+        arrayList1.add(getTypeObject("Summer Hut",context.getResources().getDrawable(R.drawable.logo_summer_hut_family_restuarant),Category.SRI_LANKAN,"Colombo 5"));
         arrayList1.add(getTypeObject("Thuna Paha",context.getResources().getDrawable(R.drawable.logo_thuna_paha_),Category.SRI_LANKAN,"Kotte"));
 
 
@@ -175,7 +180,7 @@ public class Methods
         arrayList1.add(getTypeObject("Mooseum",context.getResources().getDrawable(R.drawable.logo_mooseum_ice_cream), Category.DESSERTS,"Nugegoda"));
         arrayList1.add(getTypeObject("Cup Cake Kingdom",context.getResources().getDrawable(R.drawable.logo_cupcake_kingdom), Category.DESSERTS,"Kottawa"));
         arrayList1.add(getTypeObject("Isle Of Gelato",context.getResources().getDrawable(R.drawable.logo_isle_of_gelato), Category.DESSERTS,"Colombo"));
-        arrayList1.add(getTypeObject("Delauched Desserts",context.getResources().getDrawable(R.drawable.logo_delauched_desserts), Category.DESSERTS,"Colombo1"));
+        arrayList1.add(getTypeObject("Delauched Desserts",context.getResources().getDrawable(R.drawable.logo_delauched_desserts), Category.DESSERTS,"Colombo 8"));
         arrayList1.add(getTypeObject("Dream Scape",context.getResources().getDrawable(R.drawable.logo_dream_scape), Category.DESSERTS,"Kottawa"));
         arrayList1.add(getTypeObject("Delice Perle",context.getResources().getDrawable(R.drawable.logo_delice_perle), Category.DESSERTS,"Wattala"));
 
@@ -183,7 +188,7 @@ public class Methods
         arrayList1.add(getTypeObject("Lovetts",context.getResources().getDrawable(R.drawable.logo_lovetts), Category.JUICE_BARS,"Kotte"));
         arrayList1.add(getTypeObject("Costa",context.getResources().getDrawable(R.drawable.logo_costa_cofee), Category.JUICE_BARS,"Nugegoda"));
         arrayList1.add(getTypeObject("Cool Park",context.getResources().getDrawable(R.drawable.cool_park), Category.JUICE_BARS,"Kandy"));
-        arrayList1.add(getTypeObject("Fresco",context.getResources().getDrawable(R.drawable.logo_fresco), Category.JUICE_BARS,"Colombo1"));
+        arrayList1.add(getTypeObject("Fresco",context.getResources().getDrawable(R.drawable.logo_fresco), Category.JUICE_BARS,"Colombo 8"));
         arrayList1.add(getTypeObject("Rasa Juice Shop",context.getResources().getDrawable(R.drawable.logo_rasa_juice_shop), Category.JUICE_BARS,"Matara"));
         arrayList1.add(getTypeObject("Marine Smoothies",context.getResources().getDrawable(R.drawable.logo_marine_smoothies), Category.JUICE_BARS,"Colombo"));
 
