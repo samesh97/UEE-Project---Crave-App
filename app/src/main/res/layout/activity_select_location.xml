@@ -34,8 +34,8 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapViewLocation"
-        android:layout_width="375dp"
-        android:layout_height="492dp"
+        android:layout_width="379dp"
+        android:layout_height="527dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
@@ -45,14 +45,18 @@
 
     <Button
         android:id="@+id/btnAddLocation"
-        android:layout_width="359dp"
-        android:layout_height="115dp"
+        android:layout_width="372dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/tomato_background_right_oriented"
+        android:background="@drawable/button_primary_color_background"
+        android:fontFamily="@font/gilroy"
         android:text="Add Location"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapViewLocation"
+        app:layout_constraintVertical_bias="0.743" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
