@@ -38,23 +38,31 @@ public class MainActivity extends AppCompatActivity {
         if(getSupportFragmentManager().getBackStackEntryCount() == 1)
         {
 
-            new Handler().postDelayed(new Runnable()
+            if(isNavigationOpened())
             {
-                @Override
-                public void run() {
-                    isWantToLeave = false;
-                }
-            }, 2000);
-
-            if (isWantToLeave)
-            {
-                finish();
+                showNavigationDialog();
             }
             else
             {
-                Toast.makeText(this, "Press again to leave", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run() {
+                        isWantToLeave = false;
+                    }
+                }, 2000);
+
+                if (isWantToLeave)
+                {
+                    finish();
+                }
+                else
+                {
+                    Toast.makeText(this, "Press again to leave", Toast.LENGTH_SHORT).show();
+                }
+                isWantToLeave = true;
             }
-            isWantToLeave = true;
+
         }
         else
         {
