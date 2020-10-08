@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     {
         navigation_drawer_icon.setOnClickListener(this);
         ArrayList<Type> arrayList = new ArrayList<>();
-        arrayList.add(getTypeObject("Popular",getResources().getDrawable(R.drawable.sri_lankan), Category.POPULAR));
+        arrayList.add(getTypeObject("Popular",getResources().getDrawable(R.drawable.search_icon), Category.POPULAR));
         arrayList.add(getTypeObject("Sri Lankan",getResources().getDrawable(R.drawable.sri_lankan), Category.SRI_LANKAN));
         arrayList.add(getTypeObject("Chinese",getResources().getDrawable(R.drawable.chinese),Category.CHINESE));
         arrayList.add(getTypeObject("Indian",getResources().getDrawable(R.drawable.indian),Category.INDIAN));
