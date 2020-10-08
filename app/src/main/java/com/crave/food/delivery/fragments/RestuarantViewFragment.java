@@ -32,6 +32,7 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     private Type type;
 
     private TextView name,hotelAddress;
+    private ImageView icon;
 
     public RestuarantViewFragment(Context context, FragmentManager manager, Type type)
     {
@@ -56,6 +57,7 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
 
         name.setText(type.getName());
         hotelAddress.setText(type.getAddress());
+        icon.setImageDrawable(type.getImageId());
     }
 
     private void initViews(View view)
@@ -65,6 +67,7 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
         btn_bookATable = view.findViewById(R.id.btn_bookTable);
         name = view.findViewById(R.id.textView5);
         hotelAddress = view.findViewById(R.id.hotelAddress);
+        icon = view.findViewById(R.id.icon);
 
     }
     @Override
