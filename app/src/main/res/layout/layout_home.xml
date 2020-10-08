@@ -52,7 +52,11 @@
             android:src="@drawable/navigation_drawer_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <requestFocus/>
+
+        </ImageView>
 
 
         <ImageView

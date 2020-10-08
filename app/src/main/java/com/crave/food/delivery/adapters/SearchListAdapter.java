@@ -50,6 +50,8 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
 
             Glide.with(context).load(type.getImageId()).into(holder.icon);
 
+            holder.hotelAddress.setText(type.getAddress());
+
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -71,17 +73,19 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
         ImageView image_background;
         TextView title;
         ImageView icon;
+        TextView hotelAddress;
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
 
 
             int onesize = (int) (Methods.getDeviceWidthInPX(context) / 3.2);
-            ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(onesize, onesize);
+            ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(onesize, (int) (onesize * 1.1));
             itemView.setLayoutParams(params);
             image_background = itemView.findViewById(R.id.image_background);
             title = itemView.findViewById(R.id.title);
             icon = itemView.findViewById(R.id.icon);
+            hotelAddress = itemView.findViewById(R.id.hotelAddress);
         }
     }
 }
