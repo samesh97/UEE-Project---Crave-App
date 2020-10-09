@@ -49,10 +49,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="95dp" />
+            tools:layout_editor_absoluteY="89dp" />
 
         <EditText
-            android:id="@+id/editTextNumber2"
+            android:id="@+id/editTextCardNumber"
             android:layout_width="364dp"
             android:layout_height="62dp"
             android:background="@drawable/edit_text_background"
@@ -65,7 +65,7 @@
             tools:layout_editor_absoluteY="290dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/editTextName"
             android:layout_width="365dp"
             android:layout_height="62dp"
             android:background="@drawable/edit_text_background"
@@ -77,7 +77,7 @@
             tools:layout_editor_absoluteY="211dp" />
 
         <EditText
-            android:id="@+id/editTextDate2"
+            android:id="@+id/editTextDate"
             android:layout_width="365dp"
             android:layout_height="62dp"
             android:layout_marginBottom="20dp"
@@ -85,14 +85,14 @@
             android:ems="10"
             android:hint="Date"
             android:inputType="date"
-            app:layout_constraintBottom_toTopOf="@+id/editTextNumber3"
+            app:layout_constraintBottom_toTopOf="@+id/editTextCVV"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCardNumber"
             app:layout_constraintVertical_bias="1.0" />
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/editTextCVV"
             android:layout_width="365dp"
             android:layout_height="62dp"
             android:background="@drawable/edit_text_background"
@@ -104,7 +104,7 @@
             tools:layout_editor_absoluteY="455dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/editTextSecurityCode"
             android:layout_width="365dp"
             android:layout_height="62dp"
             android:layout_marginTop="16dp"
@@ -114,10 +114,10 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextCVV" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnPay"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
@@ -133,5 +133,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextSecurityCode" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="362dp"
+            android:layout_height="65dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16"
+            app:srcCompat="@drawable/payment_logos_collection" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

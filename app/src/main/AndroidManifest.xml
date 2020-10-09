@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".SelectLocation"></activity>
+        <activity android:name=".CartMain"></activity>
+        <activity android:name=".SelectLocation" />
         <activity android:name=".FoodButtonClicked" />
         <activity android:name=".PaymentCreditDebit" />
         <activity android:name=".PaymentMain" />
