@@ -1,8 +1,11 @@
 package com.crave.food.delivery.fragments;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -15,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -86,6 +90,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         profile_pic = view.findViewById(R.id.profile_pic);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View view)
     {
@@ -104,6 +109,22 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             String email = email_et.getText().toString().trim();
             String password = password_et.getText().toString().trim();
             String cPassword = c_password_et.getText().toString().trim();
+
+
+
+
+            if (context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_DENIED) {
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 120);
+                return;
+            }
+
+            if (context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_DENIED) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 130);
+                return;
+            }
+
 
             if (userName.isEmpty())
             {
