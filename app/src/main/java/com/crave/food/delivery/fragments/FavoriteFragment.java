@@ -16,9 +16,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.activities.MainActivity;
 
-public class FavoriteFragment extends Fragment
-{
+public class FavoriteFragment extends Fragment implements View.OnClickListener {
 
     private Context context;
     private FragmentManager manager;
@@ -27,8 +27,7 @@ public class FavoriteFragment extends Fragment
     private ImageView navigation_drawer_icon;
     private EditText editText;
 
-    public FavoriteFragment(Context context, FragmentManager manager)
-    {
+    public FavoriteFragment(Context context, FragmentManager manager) {
         this.context = context;
         this.manager = manager;
     }
@@ -37,7 +36,32 @@ public class FavoriteFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_favorite_main,container,false);
+        View view = inflater.inflate(R.layout.activity_favorite_main, container, false);
+        initViews(view);
+        setData();
         return view;
+    }
+
+    private void setData() {
+
+
+        navigation_drawer_icon.setOnClickListener(this);
+    }
+
+    private void initViews(View view) {
+        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
+    }
+
+    public void onClick(View view) {
+        if (view == navigation_drawer_icon) {
+            showNavigationDialog();
+        }
+    }
+
+    private void showNavigationDialog() {
+        if (context instanceof MainActivity) {
+            MainActivity activity = (MainActivity) context;
+            activity.showNavigationDialog();
+        }
     }
 }
