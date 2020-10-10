@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.adapters.FavoriteAdapter;
+import com.crave.food.delivery.adapters.OrderAdapter;
 import com.crave.food.delivery.models.Favorite;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
         m.setImg(R.drawable.sri_lankan);
         models.add(m);
 
-        FavoriteAdapter favoriteAdapter = new FavoriteAdapter(models);
+        OrderAdapter favoriteAdapter = new OrderAdapter(models);
         LinearLayoutManager manager = new LinearLayoutManager(context);
         foodList.setLayoutManager(manager);
         foodList.setAdapter(favoriteAdapter);
