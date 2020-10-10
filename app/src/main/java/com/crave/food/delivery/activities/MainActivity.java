@@ -6,13 +6,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.config.SharedPrefManager;
 import com.crave.food.delivery.fragments.CartFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
@@ -26,7 +31,10 @@ import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
+import com.crave.food.delivery.models.User;
 import com.google.android.material.navigation.NavigationView;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,7 +92,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         initViews();
-        
+
+        TextView user_name = findViewById(R.id.user_name);
+        CircleImageView profile_pic = findViewById(R.id.profile_pic);
+
+
+        User user = SharedPrefManager.getUser(MainActivity.this);
+        user_name.setText(user.getUserName());
+
+        String image = user.getImage();
+        Uri uri = Uri.parse(image);
+
+        profile_pic.setImageURI(uri);
+
         homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
         replaceFragment(homeFragment);
 
@@ -222,4 +242,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void Logout(View view)
+    {
+        SharedPrefManager.setUserLoggedIn(MainActivity.this,false);
+        startActivity(new Intent(MainActivity.this,NotLoggedActivity.class));
+        finish();
+    }
 }
