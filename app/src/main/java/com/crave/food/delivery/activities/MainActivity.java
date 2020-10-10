@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         initViews();
+        
         homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
         replaceFragment(homeFragment);
 
