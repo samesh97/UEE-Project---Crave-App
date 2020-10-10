@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.CartFragment;
+import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
 import com.crave.food.delivery.fragments.ProfileFragment;
@@ -136,6 +137,12 @@ public class MainActivity extends AppCompatActivity {
     public void Cart(View view)
     {
         replaceFragment(new CartFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void Favorite(View view)
+    {
+        replaceFragment(new FavoriteFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }

@@ -13,13 +13,13 @@ import androidx.fragment.app.FragmentManager;
 
 import com.crave.food.delivery.R;
 
-public class CartFragment extends Fragment
+public class FavoriteFragment extends Fragment
 {
 
     private Context context;
     private FragmentManager manager;
 
-    public CartFragment(Context context, FragmentManager manager)
+    public FavoriteFragment(Context context, FragmentManager manager)
     {
         this.context = context;
         this.manager = manager;
@@ -29,7 +29,7 @@ public class CartFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_cart_main,container,false);
+        View view = inflater.inflate(R.layout.activity_favorite_main,container,false);
         return view;
     }
 }
