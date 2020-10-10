@@ -17,6 +17,7 @@ import com.crave.food.delivery.fragments.CartFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
+import com.crave.food.delivery.fragments.OffersFragment;
 import com.crave.food.delivery.fragments.ProfileFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
@@ -143,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
     public void Favorite(View view)
     {
         replaceFragment(new FavoriteFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void Offers(View view)
+    {
+        replaceFragment(new OffersFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
