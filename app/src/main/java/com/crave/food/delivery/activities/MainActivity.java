@@ -75,7 +75,15 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            super.onBackPressed();
+            if(isNavigationOpened())
+            {
+                showNavigationDialog();
+            }
+            else
+            {
+                super.onBackPressed();
+            }
+
         }
 
     }
