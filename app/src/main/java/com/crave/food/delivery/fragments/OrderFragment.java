@@ -28,7 +28,7 @@ public class OrderFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_cart_main,container,false);
+        View view = inflater.inflate(R.layout.oder_main_activity,container,false);
         return view;
     }
 }
