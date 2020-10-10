@@ -22,6 +22,7 @@ import com.crave.food.delivery.fragments.CartFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
+import com.crave.food.delivery.fragments.MenuFragment;
 import com.crave.food.delivery.fragments.NotificationFragment;
 import com.crave.food.delivery.fragments.OffersFragment;
 import com.crave.food.delivery.fragments.OrderFragment;
@@ -164,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
         if(isNavigationOpened())
             showNavigationDialog();
     }
+    public void Menu()
+    {
+        replaceFragment(new MenuFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
     public void Favorite(View view)
     {
         replaceFragment(new FavoriteFragment(MainActivity.this,getSupportFragmentManager()));
@@ -201,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         if(isNavigationOpened())
             showNavigationDialog();
     }
+
 
     public void onRestuarantClicked(Restuarant restuarant)
     {

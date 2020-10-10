@@ -23,12 +23,7 @@ import com.crave.food.delivery.models.Restuarant;
 import java.util.ArrayList;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyViewHolder> {
-//
-//    private static final String TAG = "FoodListAdapter";
-//
-//    private ArrayList<String> mImageNames = new ArrayList<>();
-//    private ArrayList<String> mImages = new ArrayList<>();
-//    private Context mContext;
+
 
     private Context context;
     private ArrayList<Foods> list;
@@ -42,13 +37,15 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_listitem,null);
-        return new FoodListAdapter.MyViewHolder(view);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_listitem,parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodListAdapter.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+
         if(list != null && list.size() > position)
         {
             final Foods foods = list.get(position);
