@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         String image = user.getImage();
         Uri uri = Uri.parse(image);
 
-        profile_pic.setImageURI(uri);
+//        profile_pic.setImageURI(uri);
 
         homeFragment = new HomeFragment(MainActivity.this,getSupportFragmentManager());
         replaceFragment(homeFragment);
