@@ -279,6 +279,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.05"
                 android:text="Offers"
+                android:onClick="Offers"
                 app:layout_constraintBottom_toTopOf="@+id/logout"
                 app:layout_constraintEnd_toEndOf="@+id/favourites"
                 app:layout_constraintHorizontal_bias="0.0"

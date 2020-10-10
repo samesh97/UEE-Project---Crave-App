@@ -11,6 +11,4 @@ public class CartMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_main);
     }
-
-
 }

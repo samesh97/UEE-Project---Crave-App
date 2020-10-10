@@ -14,23 +14,20 @@ import android.widget.Toast;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.CartFragment;
-import com.crave.food.delivery.fragments.CashOnDeliveryFragment;
-import com.crave.food.delivery.fragments.CreditDebitFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
-import com.crave.food.delivery.fragments.PaymentFragment;
+import com.crave.food.delivery.fragments.NotificationFragment;
+import com.crave.food.delivery.fragments.OffersFragment;
 import com.crave.food.delivery.fragments.ProfileFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
-import com.crave.food.delivery.fragments.SelectLocationFragment;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     private NavigationView navigationView;
@@ -122,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             showNavigationDialog();
     }
 
-    public void Profile(View view)
+    public void onProfileClicked(View view)
     {
         replaceFragment(new ProfileFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
@@ -148,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
     public void Favorite(View view)
     {
         replaceFragment(new FavoriteFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void Offers(View view)
+    {
+        replaceFragment(new OffersFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void Notification(View view)
+    {
+        replaceFragment(new NotificationFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
@@ -178,34 +187,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Shanika
-    public void checkOut(View view)
-    {
-        replaceFragment(new PaymentFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectLocation(View view)
-    {
-        replaceFragment(new SelectLocationFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectCreditDebit(View view)
-    {
-        replaceFragment(new CreditDebitFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectCashOnDelivery(View view)
-    {
-        replaceFragment(new CashOnDeliveryFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
 
     public boolean isNavigationOpened()
     {
