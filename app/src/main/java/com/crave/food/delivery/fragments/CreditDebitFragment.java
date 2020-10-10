@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -16,15 +15,12 @@ import androidx.fragment.app.FragmentManager;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
 
-public class CartFragment extends Fragment implements View.OnClickListener
-{
-
+public class CreditDebitFragment extends Fragment implements View.OnClickListener  {
     private Context context;
     private FragmentManager manager;
-    private Button btnCheckOut;
     private ImageView navigation_drawer_icon;
 
-    public CartFragment(Context context, FragmentManager manager)
+    public CreditDebitFragment(Context context, FragmentManager manager)
     {
         this.context = context;
         this.manager = manager;
@@ -34,7 +30,7 @@ public class CartFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_cart_main,container,false);
+        View view = inflater.inflate(R.layout.activity_payment_credit_debit,container,false);
         initViews(view);
         setData();
         return view;
@@ -51,6 +47,7 @@ public class CartFragment extends Fragment implements View.OnClickListener
         navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
     }
 
+    @Override
     public void onClick(View view)
     {
         if(view == navigation_drawer_icon)

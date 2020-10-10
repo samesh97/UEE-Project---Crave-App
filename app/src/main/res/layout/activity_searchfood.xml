@@ -68,66 +68,78 @@
 
     <Button
         android:id="@+id/btnRice"
-        android:layout_width="114dp"
+        android:layout_width="0dp"
         android:layout_height="169dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/tomato_background_left_oriented"
         android:fontFamily="@font/gilroy"
         android:text="Rice"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnBurgers"
-        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
         android:id="@+id/btnBurgers"
-        android:layout_width="114dp"
+        android:layout_width="0dp"
         android:layout_height="169dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/tomato_background_right_oriented"
         android:fontFamily="@font/gilroy"
         android:text="Burgers"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.151"
-        tools:layout_editor_absoluteX="150dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnRice"
+        app:layout_constraintEnd_toStartOf="@+id/btnPizza"
+        app:layout_constraintStart_toEndOf="@+id/btnRice"
+        app:layout_constraintTop_toTopOf="@+id/btnRice"
+        app:layout_constraintVertical_bias="0.151" />
 
     <Button
         android:id="@+id/btnPizza"
-        android:layout_width="114dp"
+        android:layout_width="0dp"
         android:layout_height="169dp"
-        android:layout_marginBottom="372dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/tomato_background_left_oriented"
         android:fontFamily="@font/gilroy"
         android:text="Pizza"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBurgers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/btnBurgers"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/btnBurgers"
         app:layout_constraintVertical_bias="0.277" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/gilroy"
         android:text="Let's find foods... "
         android:textColor="#F32D13"
         android:textSize="22sp"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="101dp" />
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodRecyclerView"
-        android:layout_width="372dp"
-        android:layout_height="136dp"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="352dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnPizza"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/btnRice"
+        app:layout_constraintTop_toBottomOf="@+id/btnRice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
