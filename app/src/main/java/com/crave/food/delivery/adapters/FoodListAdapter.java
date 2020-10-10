@@ -15,59 +15,74 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.listeners.OnFoodClick;
+import com.crave.food.delivery.listeners.OnRestuarantClick;
+import com.crave.food.delivery.models.Foods;
+import com.crave.food.delivery.models.Restuarant;
 
 import java.util.ArrayList;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyViewHolder> {
+//
+//    private static final String TAG = "FoodListAdapter";
+//
+//    private ArrayList<String> mImageNames = new ArrayList<>();
+//    private ArrayList<String> mImages = new ArrayList<>();
+//    private Context mContext;
 
-    private static final String TAG = "FoodListAdapter";
+    private Context context;
+    private ArrayList<Foods> list;
+    private OnFoodClick listener;
 
-    private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
-    private Context mContext;
-
-    public FoodListAdapter( Context context, ArrayList<String> imageNames, ArrayList<String> images) {
-        this.mImageNames = imageNames;
-        this.mImages = images;
-        this.mContext = context;
+    public FoodListAdapter(Context context, ArrayList<Foods> list, OnFoodClick listener) {
+        this.context = context;
+        this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
-        MyViewHolder holder = new MyViewHolder(view);
-        return holder;
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_listitem,null);
+        return new FoodListAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder: ");
+    public void onBindViewHolder(@NonNull FoodListAdapter.MyViewHolder holder, final int position) {
+        if(list != null && list.size() > position)
+        {
+            final Foods foods = list.get(position);
+            holder.txtVwFoodName.setText(foods.getTxtVwFoodName());
 
-        Glide.with(mContext)
-                .asBitmap()
-                .load(mImages.get(position))
-                .into(holder.imgFood);
 
-        holder.txtVwFoodName.setText(mImageNames.get(position));
+            Glide.with(context).load(foods.getImageId()).into(holder.imgFood);
+
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onChange(foods);
+                }
+            });
+
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mImageNames.size();
+        return list.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imgFood;
         TextView txtVwFoodName;
-        RelativeLayout parentLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             txtVwFoodName = itemView.findViewById(R.id.txtVwFoodName);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
+
         }
     }
 }
