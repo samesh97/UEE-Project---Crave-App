@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dp"
     android:background="@drawable/ash_color_background"
     app:cardElevation="3dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     app:cardUseCompatPadding="true"
     >
 
@@ -24,7 +22,7 @@
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/titleFav"
             android:fontFamily="@font/gilroy"
             android:text="Title"
@@ -38,7 +36,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Discription"
             android:id="@+id/disFave"
             android:fontFamily="@font/gilroy"
@@ -51,8 +49,19 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/titleFav"/>
 
-
-
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/disFave"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/foodIcon"
+            android:layout_toRightOf="@+id/foodIcon"
+            android:text="Remove"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:background="#ff2f00"/>
 
 
     </RelativeLayout>

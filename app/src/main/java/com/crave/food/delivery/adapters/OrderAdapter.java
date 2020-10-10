@@ -17,33 +17,33 @@ import com.crave.food.delivery.models.Favorite;
 
 import java.util.ArrayList;
 
-public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.MyViewHolder>{
+public class OrderAdapter extends RecyclerView.Adapter<FavoriteAdapter.MyViewHolder> {
 
     OffersFragment c;
     ArrayList<Favorite> models;
 
-    public FavoriteAdapter(OffersFragment c, ArrayList<Favorite> models) {
+    public OrderAdapter(OffersFragment c, ArrayList<Favorite> models) {
         this.c = c;
         this.models = models;
     }
-    public FavoriteAdapter( ArrayList<Favorite> models) {
+    public OrderAdapter( ArrayList<Favorite> models) {
 
         this.models = models;
     }
 
-    public FavoriteAdapter(Context context, ArrayList<Favorite> models, OnCategoryClicked onCategoryClicked) {
+    public OrderAdapter(Context context, ArrayList<Favorite> models, OnCategoryClicked onCategoryClicked) {
     }
 
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_row,parent,false);
-        return new MyViewHolder(view);
+    public FavoriteAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orders_row,null);
+        return new FavoriteAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FavoriteAdapter.MyViewHolder holder, int position) {
 
         holder.favTitle.setText(models.get(position).getTitle());
         holder.favDis.setText(models.get(position).getDiscription());
@@ -67,4 +67,6 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.MyView
             favIcon = itemView.findViewById(R.id.foodIcon);
         }
     }
+
 }
+

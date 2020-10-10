@@ -1,6 +1,8 @@
 package com.crave.food.delivery.models;
 
-public class Favorite {
+import androidx.recyclerview.widget.RecyclerView;
+
+public class Favorite  {
 
     private String title,discription;
     private int img;
