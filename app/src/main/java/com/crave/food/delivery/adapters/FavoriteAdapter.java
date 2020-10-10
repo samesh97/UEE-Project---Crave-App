@@ -46,7 +46,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.MyView
         return models.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder
+    public static class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView favTitle,favDis;
         ImageView favIcon;
