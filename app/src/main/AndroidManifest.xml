@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
+        <activity android:name=".CashOnDelivery"></activity>
         <activity android:name=".CartMain" />
         <activity android:name=".SelectLocation" />
         <activity android:name=".FoodButtonClicked" />

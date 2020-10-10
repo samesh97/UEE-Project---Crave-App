@@ -50,6 +50,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_primary_color_background"
         android:fontFamily="@font/gilroy"
+        android:onClick="checkOut"
         android:text="Add Location"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
