@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dp"
     android:background="@drawable/ash_color_background"
     app:cardElevation="3dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
     app:cardUseCompatPadding="true"
     >
 
@@ -22,7 +24,7 @@
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/titleFav"
             android:fontFamily="@font/gilroy"
             android:text="Title"
@@ -36,7 +38,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Discription"
             android:id="@+id/disFave"
             android:fontFamily="@font/gilroy"
