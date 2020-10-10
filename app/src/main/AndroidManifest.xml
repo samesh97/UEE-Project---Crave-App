@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".activities.notification_main"></activity>
-        <activity android:name=".activities.offers_main" />
         <activity android:name=".CartMain" />
         <activity android:name=".SelectLocation" />
         <activity android:name=".FoodButtonClicked" />
