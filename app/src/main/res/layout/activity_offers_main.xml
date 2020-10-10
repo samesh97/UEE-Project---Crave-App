@@ -60,13 +60,14 @@
     <ImageView
         android:id="@+id/foodList"
         android:layout_width="match_parent"
-        android:layout_height="192dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="4dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/offer_banner"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +95,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
         android:id="@+id/offersRecycleView"/>
 
 
