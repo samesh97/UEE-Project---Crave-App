@@ -207,6 +207,7 @@
                 android:fontFamily="@font/gilroy"
                 android:gravity="center"
                 android:text="MENUS"
+                android:onClick="Menu"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_bookTable"
