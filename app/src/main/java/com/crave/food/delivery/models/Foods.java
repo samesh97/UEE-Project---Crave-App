@@ -13,7 +13,7 @@ public class Foods implements Serializable {
     }
 
     public void setImageId(Drawable imageView3) {
-        this.imgFood = imgFood;
+        this.imgFood = imageView3;
     }
 
     public String getTxtVwFoodName() {

@@ -34,6 +34,8 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     private TextView name,hotelAddress;
     private ImageView icon;
 
+    private Button button;
+
     public RestuarantViewFragment(Context context, FragmentManager manager, Type type)
     {
         this.context = context;
@@ -54,6 +56,7 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
     private void setData() {
         navigation_drawer_icon.setOnClickListener(this);
         btn_bookATable.setOnClickListener(this);
+        button.setOnClickListener(this);
 
         name.setText(type.getName());
         hotelAddress.setText(type.getAddress());
@@ -68,6 +71,7 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
         name = view.findViewById(R.id.textView5);
         hotelAddress = view.findViewById(R.id.hotelAddress);
         icon = view.findViewById(R.id.icon);
+        button = view.findViewById(R.id.button);
 
     }
     @Override
@@ -80,6 +84,14 @@ public class RestuarantViewFragment extends Fragment implements View.OnClickList
         else if(view== btn_bookATable)
         {
             onBookATableClicked();
+        }
+        else if(view == button)
+        {
+            if(context instanceof MainActivity)
+            {
+                MainActivity activity = (MainActivity) context;
+                activity.Menu();
+            }
         }
     }
 
