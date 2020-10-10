@@ -12,9 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
+import com.crave.food.delivery.adapters.FavoriteAdapter;
+import com.crave.food.delivery.models.Favorite;
+
+import java.util.ArrayList;
 
 public class OrderFragment extends Fragment implements View.OnClickListener {
 
@@ -22,6 +28,8 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
     private FragmentManager manager;
     private Button btnCheckOut;
     private ImageView navigation_drawer_icon;
+
+    RecyclerView foodList;
 
     public OrderFragment(Context context, FragmentManager manager)
     {
@@ -40,6 +48,25 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
     }
     private void setData()
     {
+        ArrayList<Favorite> models = new ArrayList<>();
+
+        Favorite m = new Favorite();
+        m.setTitle("Orange Juice");
+        m.setDiscription("KFC Malabe \nLKR 350.00");
+        m.setImg(R.drawable.juice_bars);
+        models.add(m);
+
+        m = new Favorite();
+        m.setTitle("Rice And Curry");
+        m.setDiscription("Mathara Bath Kade Colombo\nLKR 200.00");
+        m.setImg(R.drawable.sri_lankan);
+        models.add(m);
+
+        FavoriteAdapter favoriteAdapter = new FavoriteAdapter(models);
+        LinearLayoutManager manager = new LinearLayoutManager(context);
+        foodList.setLayoutManager(manager);
+        foodList.setAdapter(favoriteAdapter);
+        foodList.setItemViewCacheSize(models.size());
 
 
         navigation_drawer_icon.setOnClickListener(this);
@@ -48,6 +75,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
     private void initViews(View view)
     {
         navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
+        foodList = view.findViewById(R.id.recycleView);
     }
 
     public void onClick(View view)
