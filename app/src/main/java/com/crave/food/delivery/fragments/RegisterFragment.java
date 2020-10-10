@@ -36,7 +36,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private Context context;
     private FragmentManager manager;
 
-    private ImageView navigation_drawer_icon;
+//    private ImageView navigation_drawer_icon;
     private Button register_btn;
 
     private EditText username_et,email_et,password_et,c_password_et;
@@ -74,14 +74,14 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private void setData()
     {
-        navigation_drawer_icon.setOnClickListener(this);
+//        navigation_drawer_icon.setOnClickListener(this);
         register_btn.setOnClickListener(this);
         profile_pic.setOnClickListener(this);
     }
 
     private void initViews(View view)
     {
-        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
+//        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
         register_btn = view.findViewById(R.id.register_btn);
         username_et = view.findViewById(R.id.username_et);
         email_et = view.findViewById(R.id.email_et);
@@ -94,11 +94,11 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view)
     {
-        if(view == navigation_drawer_icon)
-        {
-            showNavigationDialog();
-        }
-        else if(view == profile_pic)
+//        if(view == navigation_drawer_icon)
+//        {
+//            showNavigationDialog();
+//        }
+        if(view == profile_pic)
         {
             Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);

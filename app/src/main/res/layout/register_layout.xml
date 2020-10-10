@@ -63,17 +63,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
-    <ImageView
-        android:id="@+id/navigation_drawer_icon"
-        android:layout_width="40dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/navigation_drawer_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/ash" />
+<!--    <ImageView-->
+<!--        android:id="@+id/navigation_drawer_icon"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginLeft="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@drawable/navigation_drawer_icon"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:tint="@color/ash" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/username"

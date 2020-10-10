@@ -51,7 +51,7 @@ public class PopularRecommendedFragment extends Fragment
 
     private void setData()
     {
-        Glide.with(context).load(R.drawable.sri_lankan).into(recommended_food_icon);
+       // Glide.with(context).load(R.drawable.sri_lankan).into(recommended_food_icon);
 
 
 

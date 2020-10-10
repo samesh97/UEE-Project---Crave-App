@@ -29,7 +29,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener
     private Context context;
     private FragmentManager manager;
     private LottieAnimationView login_animation;
-    private ImageView navigation_drawer_icon;
+//    private ImageView navigation_drawer_icon;
 
     private EditText username_et,password_et;
     private Button login_btn;
@@ -56,7 +56,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener
 //        login_animation.setRenderMode(RenderMode.SOFTWARE);
 //        login_animation.playAnimation();
 
-        navigation_drawer_icon.setOnClickListener(this);
+//        navigation_drawer_icon.setOnClickListener(this);
         login_btn.setOnClickListener(this);
 
 
@@ -65,7 +65,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener
     private void initViews(View view)
     {
         login_animation = view.findViewById(R.id.login_animation);
-        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
+//        navigation_drawer_icon = view.findViewById(R.id.navigation_drawer_icon);
         username_et = view.findViewById(R.id.username_et);
         password_et = view.findViewById(R.id.password_et);
         login_btn = view.findViewById(R.id.login_btn);
@@ -73,11 +73,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
-        if(view == navigation_drawer_icon)
-        {
-            showNavigationDialog();
-        }
-        else if(view == login_btn)
+//        if(view == navigation_drawer_icon)
+//        {
+//            showNavigationDialog();
+//        }
+        if(view == login_btn)
         {
             String userName = username_et.getText().toString().trim();
             String password = password_et.getText().toString().trim();
