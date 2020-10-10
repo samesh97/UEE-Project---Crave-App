@@ -14,20 +14,16 @@ import android.widget.Toast;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.fragments.CartFragment;
-import com.crave.food.delivery.fragments.CashOnDeliveryFragment;
-import com.crave.food.delivery.fragments.CreditDebitFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
-import com.crave.food.delivery.fragments.MenuFragment;
 import com.crave.food.delivery.fragments.NotificationFragment;
 import com.crave.food.delivery.fragments.OffersFragment;
-import com.crave.food.delivery.fragments.PaymentFragment;
+import com.crave.food.delivery.fragments.OrderFragment;
 import com.crave.food.delivery.fragments.ProfileFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
-import com.crave.food.delivery.fragments.SelectLocationFragment;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 import com.google.android.material.navigation.NavigationView;
@@ -75,15 +71,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            if(isNavigationOpened())
-            {
-                showNavigationDialog();
-            }
-            else
-            {
-                super.onBackPressed();
-            }
-
+            super.onBackPressed();
         }
 
     }
@@ -156,15 +144,15 @@ public class MainActivity extends AppCompatActivity {
         if(isNavigationOpened())
             showNavigationDialog();
     }
-    public void Menu(View view)
-    {
-        replaceFragment(new MenuFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
     public void Favorite(View view)
     {
         replaceFragment(new FavoriteFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void Orders(View view)
+    {
+        replaceFragment(new OrderFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
@@ -177,35 +165,6 @@ public class MainActivity extends AppCompatActivity {
     public void Notification(View view)
     {
         replaceFragment(new NotificationFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    //Shanika
-    public void checkOut(View view)
-    {
-        replaceFragment(new PaymentFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectLocation(View view)
-    {
-        replaceFragment(new SelectLocationFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectCreditDebit(View view)
-    {
-        replaceFragment(new CreditDebitFragment(MainActivity.this,getSupportFragmentManager()));
-        if(isNavigationOpened())
-            showNavigationDialog();
-    }
-
-    public void selectCashOnDelivery(View view)
-    {
-        replaceFragment(new CashOnDeliveryFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
