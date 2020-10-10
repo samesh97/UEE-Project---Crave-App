@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
+import com.crave.food.delivery.activities.NotLoggedActivity;
 import com.crave.food.delivery.config.SharedPrefManager;
 import com.crave.food.delivery.models.User;
 import com.google.android.material.snackbar.Snackbar;
@@ -142,6 +143,12 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 SharedPrefManager.setUser(context,user);
 
                 Toast.makeText(context, "Registration Success", Toast.LENGTH_SHORT).show();
+                if(context instanceof NotLoggedActivity)
+                {
+                    ((NotLoggedActivity) context).onBackPressed();
+                }
+
+
 
 
             }
