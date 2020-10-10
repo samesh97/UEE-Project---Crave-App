@@ -10,18 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.crave.food.delivery.FavoriteHolder;
 import com.crave.food.delivery.R;
+import com.crave.food.delivery.fragments.OffersFragment;
+import com.crave.food.delivery.listeners.OnCategoryClicked;
 import com.crave.food.delivery.models.Favorite;
 
 import java.util.ArrayList;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder>{
 
-    Context c;
+    OffersFragment c;
     ArrayList<Favorite> models;
 
-    public FavoriteAdapter(Context c, ArrayList<Favorite> models) {
+    public FavoriteAdapter(OffersFragment c, ArrayList<Favorite> models) {
         this.c = c;
         this.models = models;
+    }
+    public FavoriteAdapter( ArrayList<Favorite> models) {
+
+        this.models = models;
+    }
+
+    public FavoriteAdapter(Context context, ArrayList<Favorite> models, OnCategoryClicked onCategoryClicked) {
     }
 
     @NonNull
