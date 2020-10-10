@@ -63,6 +63,18 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
         m.setImg(R.drawable.sri_lankan);
         models.add(m);
 
+        m = new Favorite();
+        m.setTitle("Rice And Curry");
+        m.setDiscription("Mathara Bath Kade Colombo\nLKR 200.00");
+        m.setImg(R.drawable.sri_lankan);
+        models.add(m);
+
+        m = new Favorite();
+        m.setTitle("Rice And Curry");
+        m.setDiscription("Mathara Bath Kade Colombo\nLKR 200.00");
+        m.setImg(R.drawable.sri_lankan);
+        models.add(m);
+
         OrderAdapter favoriteAdapter = new OrderAdapter(models);
         LinearLayoutManager manager = new LinearLayoutManager(context);
         foodList.setLayoutManager(manager);
