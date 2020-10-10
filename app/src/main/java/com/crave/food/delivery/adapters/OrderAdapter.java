@@ -38,7 +38,7 @@ public class OrderAdapter extends RecyclerView.Adapter<FavoriteAdapter.MyViewHol
     @NonNull
     @Override
     public FavoriteAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orders_row,null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orders_row,parent,false);
         return new FavoriteAdapter.MyViewHolder(view);
     }
 
