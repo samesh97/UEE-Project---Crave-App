@@ -115,13 +115,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
             if (context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA}, 120);
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 120);
                 return;
             }
 
             if (context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA}, 130);
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 130);
                 return;
             }
 
