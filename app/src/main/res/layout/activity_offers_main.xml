@@ -25,25 +25,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@null"
-            android:fontFamily="@font/gilroy"
-            android:hint="Type keyword"
-            android:paddingLeft="60dp"
-            android:paddingRight="20dp"
-            android:textSize="15sp"
-            android:maxLines="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/search_icon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
         <ImageView
             android:id="@+id/navigation_drawer_icon"
             android:layout_width="40dp"
@@ -55,17 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageView
-            android:id="@+id/search_icon"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/search_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
