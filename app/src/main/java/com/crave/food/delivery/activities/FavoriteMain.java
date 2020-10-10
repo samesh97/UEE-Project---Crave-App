@@ -1,6 +1,7 @@
 package com.crave.food.delivery.activities;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,4 +45,5 @@ public class FavoriteMain extends AppCompatActivity {
 
         return models;
     }
+
 }
