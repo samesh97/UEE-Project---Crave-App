@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean isWantToLeave = false;
     private HomeFragment homeFragment = null;
 
+    private CircleImageView profile_pic;
+    private TextView user_name;
+
     @Override
     public void onBackPressed()
     {
@@ -85,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
+            User user = SharedPrefManager.getUser(MainActivity.this);
+            user_name.setText(user.getUserName());
+
+            String image = user.getImage();
+            Uri uri = Uri.parse(image);
+
+            profile_pic.setImageURI(uri);
             super.onBackPressed();
         }
 
@@ -99,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        TextView user_name = findViewById(R.id.user_name);
-        CircleImageView profile_pic = findViewById(R.id.profile_pic);
+        user_name = findViewById(R.id.user_name);
+        profile_pic = findViewById(R.id.profile_pic);
 
 
         User user = SharedPrefManager.getUser(MainActivity.this);
