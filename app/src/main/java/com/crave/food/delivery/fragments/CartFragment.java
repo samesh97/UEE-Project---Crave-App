@@ -51,10 +51,30 @@ public class CartFragment extends Fragment implements View.OnClickListener
         foods.setTxtVwFoodName("Bakery");
         foods.setTxtVwPriceCart("Rs. 150.00");
         foods.setImageId(context.getResources().getDrawable(R.drawable.bakery));
-        foods.setTxtVwFoodName("Chicken Burger");
-        foods.setTxtVwPriceCart("Rs.490.00");
-        foods.setImageId(context.getResources().getDrawable(R.drawable.burger ));
 
+
+        list.add(foods);
+
+        Foods foods2 = new Foods();
+        foods2.setTxtVwFoodName("Chicken Burger");
+        foods2.setTxtVwPriceCart("Rs.490.00");
+        foods2.setImageId(context.getResources().getDrawable(R.drawable.burger ));
+
+        list.add(foods2);
+
+        Foods foods3 = new Foods();
+        foods3.setTxtVwFoodName("Noodles");
+        foods3.setTxtVwPriceCart("Rs.670.00");
+        foods3.setImageId(context.getResources().getDrawable(R.drawable.chinese ));
+
+        list.add(foods3);
+
+        Foods foods4 = new Foods();
+        foods4.setTxtVwFoodName("Orange Juice");
+        foods4.setTxtVwPriceCart("Rs.170.00");
+        foods4.setImageId(context.getResources().getDrawable(R.drawable.juice_bars ));
+
+        list.add(foods4);
 
         list.add(foods);
         FoodListAdapter adapter = new FoodListAdapter(context, list, new OnFoodClick() {

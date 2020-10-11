@@ -51,12 +51,30 @@ public class MenuFragment extends Fragment implements View.OnClickListener
         foods.setTxtVwFoodName("Bakery");
         foods.setTxtVwDescription("All kinds of Bakery items are available.");
         foods.setImageId(context.getResources().getDrawable(R.drawable.bakery));
-        foods.setTxtVwFoodName("Chicken Burger");
-        foods.setTxtVwDescription("Burger with chillie chicken.");
-        foods.setImageId(context.getResources().getDrawable(R.drawable.burger ));
-
 
         list.add(foods);
+
+        Foods foods2 = new Foods();
+        foods2.setTxtVwFoodName("Chicken Burger");
+        foods2.setTxtVwDescription("Burger with chillie chicken.");
+        foods2.setImageId(context.getResources().getDrawable(R.drawable.burger ));
+
+        list.add(foods2);
+
+        Foods foods3 = new Foods();
+        foods3.setTxtVwFoodName("Noodles");
+        foods3.setTxtVwDescription("Chinese noodles with chillie chicken.");
+        foods3.setImageId(context.getResources().getDrawable(R.drawable.chinese ));
+
+        list.add(foods3);
+
+        Foods foods4 = new Foods();
+        foods4.setTxtVwFoodName("Juices");
+        foods4.setTxtVwDescription("All kinds of juices");
+        foods4.setImageId(context.getResources().getDrawable(R.drawable.juice_bars ));
+
+        list.add(foods4);
+
         FoodListAdapter adapter = new FoodListAdapter(context, list, new OnFoodClick() {
             @Override
             public void onChange(Foods foods)
@@ -64,6 +82,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener
 
             }
         });
+
 
         foodRecyclerView.setAdapter(adapter);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(context));
