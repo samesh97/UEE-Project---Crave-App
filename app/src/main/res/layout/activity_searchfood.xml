@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchFood">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -70,8 +70,8 @@
         android:id="@+id/btnRice"
         android:layout_width="0dp"
         android:layout_height="169dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
@@ -107,8 +107,8 @@
         android:layout_height="169dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/tomato_background_left_oriented"
         android:fontFamily="@font/gilroy"
         android:text="Pizza"
@@ -126,9 +126,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/gilroy"
-        android:text="Let's find foods... "
-        android:textColor="#F32D13"
+        android:text="Let's find foods"
+        android:textColor="@color/orange"
         android:textSize="22sp"
+        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 

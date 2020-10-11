@@ -79,7 +79,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener
             @Override
             public void onChange(Foods foods)
             {
-
+                if(context instanceof MainActivity)
+                {
+                    ((MainActivity) context).selectFood(foods);
+                }
             }
         });
 
