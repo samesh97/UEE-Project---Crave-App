@@ -147,8 +147,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener
                     user.setImage(user1.getImage());
                 }
 
-                SharedPrefManager.setUserLoggedIn(context,true);
-                SharedPrefManager.setUser(context,user);
+                SharedPrefManager.setUser(context,user,true);
 
                 Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
                 if(context instanceof MainActivity)
