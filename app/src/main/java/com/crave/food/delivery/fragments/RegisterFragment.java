@@ -1,7 +1,9 @@
 package com.crave.food.delivery.fragments;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -100,19 +102,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 //        }
         if(view == profile_pic)
         {
-            Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);
-        }
-        else if(view == register_btn)
-        {
-            String userName = username_et.getText().toString().trim();
-            String email = email_et.getText().toString().trim();
-            String password = password_et.getText().toString().trim();
-            String cPassword = c_password_et.getText().toString().trim();
-
-
-
-
             if (context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED) {
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 120);
@@ -124,6 +113,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 130);
                 return;
             }
+            Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);
+        }
+        else if(view == register_btn)
+        {
+            String userName = username_et.getText().toString().trim();
+            String email = email_et.getText().toString().trim();
+            String password = password_et.getText().toString().trim();
+            String cPassword = c_password_et.getText().toString().trim();
+
+
 
 
             if (userName.isEmpty())
@@ -161,13 +161,24 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 user.setUserName(userName);
                 user.setPassword(password);
                 user.setImage(imageUri.toString());
-                SharedPrefManager.setUser(context,user);
+                SharedPrefManager.setUser(context,user,false);
 
-                Toast.makeText(context, "Registration Success", Toast.LENGTH_SHORT).show();
-                if(context instanceof NotLoggedActivity)
-                {
-                    ((NotLoggedActivity) context).onBackPressed();
-                }
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Thank You For Registering..");
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        if(context instanceof NotLoggedActivity)
+                        {
+                            ((NotLoggedActivity) context).onBackPressed();
+                        }
+                    }
+                });
+                builder.setCancelable(false);
+                builder.show();
+
+
 
 
 

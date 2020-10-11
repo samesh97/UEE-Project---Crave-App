@@ -14,16 +14,16 @@ public class SharedPrefManager
     private static final String IMAGE = "image";
     private static final String IS_LOGGED_IN = "is_loggedIn";
 
-    public static void setUser(Context context, User user)
+    public static void setUser(Context context, User user,boolean isLoggedIn)
     {
         SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         //
         editor.putString(USER_NAME,user.getUserName());
         editor.putString(PASSWORD,user.getPassword());
-        editor.putString(EMAIL,user.getPassword());
+        editor.putString(EMAIL,user.getEmail());
         editor.putString(IMAGE,user.getImage());
-        editor.putBoolean(IS_LOGGED_IN,false);
+        editor.putBoolean(IS_LOGGED_IN,isLoggedIn);
         editor.apply();
     }
     public static User getUser(Context context)
@@ -48,6 +48,6 @@ public class SharedPrefManager
         SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(IS_LOGGED_IN,isTrue);
-        editor.commit();
+        editor.apply();
     }
 }
