@@ -22,6 +22,7 @@ import com.crave.food.delivery.fragments.CartFragment;
 import com.crave.food.delivery.fragments.CashOnDeliveryFragment;
 import com.crave.food.delivery.fragments.CreditDebitFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
+import com.crave.food.delivery.fragments.FoodClickedFragment;
 import com.crave.food.delivery.fragments.FoodViewFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
@@ -269,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectFood(View view)
     {
-        replaceFragment(new FoodViewFragment(MainActivity.this,getSupportFragmentManager()));
+        replaceFragment(new FoodClickedFragment(MainActivity.this,getSupportFragmentManager()));
         if(isNavigationOpened())
             showNavigationDialog();
     }
