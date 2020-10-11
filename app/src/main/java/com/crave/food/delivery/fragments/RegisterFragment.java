@@ -100,19 +100,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 //        }
         if(view == profile_pic)
         {
-            Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);
-        }
-        else if(view == register_btn)
-        {
-            String userName = username_et.getText().toString().trim();
-            String email = email_et.getText().toString().trim();
-            String password = password_et.getText().toString().trim();
-            String cPassword = c_password_et.getText().toString().trim();
-
-
-
-
             if (context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED) {
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 120);
@@ -124,6 +111,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 130);
                 return;
             }
+            Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);
+        }
+        else if(view == register_btn)
+        {
+            String userName = username_et.getText().toString().trim();
+            String email = email_et.getText().toString().trim();
+            String password = password_et.getText().toString().trim();
+            String cPassword = c_password_et.getText().toString().trim();
+
+
 
 
             if (userName.isEmpty())

@@ -21,7 +21,7 @@ public class SharedPrefManager
         //
         editor.putString(USER_NAME,user.getUserName());
         editor.putString(PASSWORD,user.getPassword());
-        editor.putString(EMAIL,user.getPassword());
+        editor.putString(EMAIL,user.getEmail());
         editor.putString(IMAGE,user.getImage());
         editor.putBoolean(IS_LOGGED_IN,false);
         editor.apply();
@@ -48,6 +48,6 @@ public class SharedPrefManager
         SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(IS_LOGGED_IN,isTrue);
-        editor.commit();
+        editor.apply();
     }
 }
