@@ -2,8 +2,11 @@ package com.crave.food.delivery.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,8 @@ import com.crave.food.delivery.R;
 import com.crave.food.delivery.activities.MainActivity;
 import com.crave.food.delivery.config.SharedPrefManager;
 import com.crave.food.delivery.models.User;
+
+import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -82,7 +87,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener
         email_et.setText(user.getEmail());
         password_et.setText(user.getPassword());
         c_password_et.setText(user.getPassword());
-        profile_pic.setImageURI(Uri.parse(user.getImage()));
+
+        try
+        {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(user.getImage()));
+            profile_pic.setImageBitmap(bitmap);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
 
         return view;
     }
@@ -96,7 +111,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener
         }
         else if(view == profile_pic)
         {
-            Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE);
         }
         else if(view == register_btn)
