@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +21,7 @@ public class CreditDebitFragment extends Fragment implements View.OnClickListene
     private Context context;
     private FragmentManager manager;
     private ImageView navigation_drawer_icon;
+    private Button btnPay;
 
     public CreditDebitFragment(Context context, FragmentManager manager)
     {
@@ -53,6 +56,10 @@ public class CreditDebitFragment extends Fragment implements View.OnClickListene
         if(view == navigation_drawer_icon)
         {
             showNavigationDialog();
+        }
+
+        else if(view == btnPay){
+            Toast.makeText(context, "Successfully paid!", Toast.LENGTH_SHORT).show();
         }
     }
 

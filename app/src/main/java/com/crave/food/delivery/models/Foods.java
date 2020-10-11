@@ -8,6 +8,7 @@ public class Foods implements Serializable {
     private Drawable imgFood;
     private String txtVwFoodName;
     private String txtVwDescription;
+    private String txtVwPriceCart;
 
     public Drawable getImageId() {
         return imgFood;
@@ -33,4 +34,11 @@ public class Foods implements Serializable {
         this.txtVwDescription = txtVwDescription;
     }
 
+    public String getTxtVwPriceCart() {
+        return txtVwPriceCart;
+    }
+
+    public void setTxtVwPriceCart(String txtVwPriceCart) {
+        this.txtVwPriceCart = txtVwPriceCart;
+    }
 }
