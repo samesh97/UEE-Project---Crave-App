@@ -98,6 +98,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener
         {
             showNavigationDialog();
         }
+
+        else if(view == foodRecyclerView){
+            showNavigationDialog();
+        }
     }
 
     private void showNavigationDialog()
