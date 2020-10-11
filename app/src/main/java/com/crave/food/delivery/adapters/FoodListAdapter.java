@@ -50,7 +50,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
         {
             final Foods foods = list.get(position);
             holder.txtVwFoodName.setText(foods.getTxtVwFoodName());
-
+            holder.txtVwDescription.setText(foods.getTxtVwDescription());
 
             Glide.with(context).load(foods.getImageId()).into(holder.imgFood);
 
@@ -74,12 +74,13 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
 
         ImageView imgFood;
         TextView txtVwFoodName;
+        TextView txtVwDescription;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             txtVwFoodName = itemView.findViewById(R.id.txtVwFoodName);
-
+            txtVwDescription = itemView.findViewById(R.id.txtVwDescription);
         }
     }
 }

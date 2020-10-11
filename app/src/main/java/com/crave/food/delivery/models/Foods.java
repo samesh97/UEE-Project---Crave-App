@@ -7,6 +7,7 @@ import java.io.Serializable;
 public class Foods implements Serializable {
     private Drawable imgFood;
     private String txtVwFoodName;
+    private String txtVwDescription;
 
     public Drawable getImageId() {
         return imgFood;
@@ -20,8 +21,16 @@ public class Foods implements Serializable {
         return txtVwFoodName;
     }
 
-    public void setTxtVwFoodName(String resturant) {
-        this.txtVwFoodName = resturant;
+    public void setTxtVwFoodName(String txtVwFoodName) {
+        this.txtVwFoodName = txtVwFoodName;
+    }
+
+    public String getTxtVwDescription() {
+        return txtVwDescription;
+    }
+
+    public void setTxtVwDescription(String txtVwDescription) {
+        this.txtVwDescription = txtVwDescription;
     }
 
 }

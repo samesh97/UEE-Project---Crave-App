@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.crave.food.delivery.R;
 import com.crave.food.delivery.config.SharedPrefManager;
 import com.crave.food.delivery.fragments.CartFragment;
+import com.crave.food.delivery.fragments.CashOnDeliveryFragment;
+import com.crave.food.delivery.fragments.CreditDebitFragment;
 import com.crave.food.delivery.fragments.FavoriteFragment;
 import com.crave.food.delivery.fragments.HomeFragment;
 import com.crave.food.delivery.fragments.LoginFragment;
@@ -26,10 +28,12 @@ import com.crave.food.delivery.fragments.MenuFragment;
 import com.crave.food.delivery.fragments.NotificationFragment;
 import com.crave.food.delivery.fragments.OffersFragment;
 import com.crave.food.delivery.fragments.OrderFragment;
+import com.crave.food.delivery.fragments.PaymentFragment;
 import com.crave.food.delivery.fragments.ProfileFragment;
 import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
+import com.crave.food.delivery.fragments.SelectLocationFragment;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 import com.crave.food.delivery.models.User;
@@ -222,6 +226,35 @@ public class MainActivity extends AppCompatActivity {
         ft.setCustomAnimations(R.anim.bottom_to_top,0).replace(layout, fragment).commit();
     }
 
+
+    //shanika
+    public void checkOut(View view)
+    {
+        replaceFragment(new PaymentFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+
+    public void selectLocation(View view)
+    {
+        replaceFragment(new SelectLocationFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+
+    public void selectCreditDebit(View view)
+    {
+        replaceFragment(new CreditDebitFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+
+    public void selectCashOnDelivery(View view)
+    {
+        replaceFragment(new CashOnDeliveryFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
 
 
     public boolean isNavigationOpened()
