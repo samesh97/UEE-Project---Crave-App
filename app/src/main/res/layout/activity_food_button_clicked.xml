@@ -21,6 +21,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+
+
         <ImageView
             android:id="@+id/navigation_drawer_icon"
             android:layout_width="40dp"
@@ -52,10 +54,9 @@
         android:layout_width="124dp"
         android:layout_height="157dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/burger"
-        tools:layout_editor_absoluteY="214dp" />
+        tools:layout_editor_absoluteY="146dp" />
 
     <TextView
         android:id="@+id/textView12"
@@ -68,50 +69,46 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:fontFamily="@font/backslash_rpjol"
         android:text="Ingrediants"
         android:textColor="#F32D13"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        tools:layout_editor_absoluteY="341dp" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:fontFamily="@font/backslash_rpjol"
         android:text="Size"
         android:textColor="#F32D13"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        tools:layout_editor_absoluteY="455dp" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
         android:fontFamily="@font/backslash_rpjol"
         android:text="Price        -    Rs. 490.00"
         android:textColor="#F32D13"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        tools:layout_editor_absoluteY="527dp" />
 
     <Button
         android:id="@+id/btnAddToCart"
@@ -135,9 +132,9 @@
         android:id="@+id/textView22"
         android:layout_width="354dp"
         android:layout_height="41dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp"
         android:text="Chicken, Tomatos, Cheese"
         android:textColor="@color/orange"
         app:layout_constraintStart_toStartOf="parent"

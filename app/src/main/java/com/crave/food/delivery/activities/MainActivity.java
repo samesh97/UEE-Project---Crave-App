@@ -36,6 +36,7 @@ import com.crave.food.delivery.fragments.RegisterFragment;
 import com.crave.food.delivery.fragments.RestuarantFragment;
 import com.crave.food.delivery.fragments.RestuarantViewFragment;
 import com.crave.food.delivery.fragments.SelectLocationFragment;
+import com.crave.food.delivery.models.Foods;
 import com.crave.food.delivery.models.Restuarant;
 import com.crave.food.delivery.models.Type;
 import com.crave.food.delivery.models.User;
@@ -271,6 +272,12 @@ public class MainActivity extends AppCompatActivity {
     public void selectFood(View view)
     {
         replaceFragment(new FoodClickedFragment(MainActivity.this,getSupportFragmentManager()));
+        if(isNavigationOpened())
+            showNavigationDialog();
+    }
+    public void selectFood(Foods foods)
+    {
+        replaceFragment(new FoodClickedFragment(MainActivity.this,getSupportFragmentManager(),foods));
         if(isNavigationOpened())
             showNavigationDialog();
     }
