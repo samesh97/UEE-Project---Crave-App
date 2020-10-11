@@ -48,17 +48,16 @@ public class MenuFragment extends Fragment implements View.OnClickListener
         ArrayList<Foods> list = new ArrayList<>();
 
         Foods foods = new Foods();
-        foods.setTxtVwFoodName("Bakery");
-        foods.setTxtVwDescription("All kinds of Bakery items are available.");
-        foods.setImageId(context.getResources().getDrawable(R.drawable.bakery));
+        foods.setTxtVwFoodName("Chicken Burger");
+        foods.setTxtVwDescription("Burger with chillie chicken.");
+        foods.setImageId(context.getResources().getDrawable(R.drawable.burger ));
 
         list.add(foods);
 
         Foods foods2 = new Foods();
-        foods2.setTxtVwFoodName("Chicken Burger");
-        foods2.setTxtVwDescription("Burger with chillie chicken.");
-        foods2.setImageId(context.getResources().getDrawable(R.drawable.burger ));
-
+        foods2.setTxtVwFoodName("Bakery");
+        foods2.setTxtVwDescription("All kinds of Bakery items are available.");
+        foods2.setImageId(context.getResources().getDrawable(R.drawable.bakery));
         list.add(foods2);
 
         Foods foods3 = new Foods();
